@@ -1,0 +1,132 @@
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "type": "java",
+            "name": "ESTRELLES",
+            "request": "launch",
+            "mainClass": "ESTRELLES",
+            "projectName": "Programacio JAVA_2fea1a5f"
+        },
+        {
+            "type": "java",
+            "name": "ProbaCity",
+            "request": "launch",
+            "mainClass": "ProbaCity",
+            "projectName": "Programacio JAVA_2fea1a5f"
+        },
+        {
+            "type": "java",
+            "name": "Funcions1",
+            "request": "launch",
+            "mainClass": "AEA3.Funcions1",
+            "projectName": "Programacio JAVA_2fea1a5f"
+        },
+        {
+            "type": "java",
+            "name": "RegistreTemperatures_PART5",
+            "request": "launch",
+            "mainClass": "AEA3.RegistreTemperatures_PART5",
+            "projectName": "Programacio JAVA_2fea1a5f"
+        },
+        {
+            "type": "java",
+            "name": "Funcions1",
+            "request": "launch",
+            "mainClass": "Funcions1",
+            "projectName": "Programacio JAVA_2fea1a5f"
+        },
+        {
+            "type": "java",
+            "name": "Exercici5_repas",
+            "request": "launch",
+            "mainClass": "Exercici5_repas",
+            "projectName": "Programacio JAVA_2fea1a5f"
+        },
+        {
+            "type": "java",
+            "name": "Exercici4_repas",
+            "request": "launch",
+            "mainClass": "Exercici4_repas",
+            "projectName": "Programacio JAVA_2fea1a5f"
+        },
+        {
+            "type": "java",
+            "name": "Exercici3_repas",
+            "request": "launch",
+            "mainClass": "Exercici3_repas",
+            "projectName": "Programacio JAVA_2fea1a5f"
+        },
+        {
+            "type": "java",
+            "name": "Exercici2_repas",
+            "request": "launch",
+            "mainClass": "Exercici2_repas",
+            "projectName": "Programacio JAVA_2fea1a5f"
+        },
+        {
+            "type": "java",
+            "name": "Exercici1_repas",
+            "request": "launch",
+            "mainClass": "Exercici1_repas",
+            "projectName": "Programacio JAVA_2fea1a5f"
+        },
+        {
+            "type": "java",
+            "name": "MATRIU1",
+            "request": "launch",
+            "mainClass": "MATRIU1",
+            "projectName": "Programacio JAVA_2fea1a5f"
+        },
+        {
+            "type": "java",
+            "name": "Exercici6",
+            "request": "launch",
+            "mainClass": "Exercici6",
+            "projectName": "Programacio_266419c3"
+        },
+        {
+            "type": "java",
+            "name": "CORRECCIO_EXAMEN",
+            "request": "launch",
+            "mainClass": "CORRECCIO_EXAMEN",
+            "projectName": "Programacio_266419c3"
+        },
+        {
+            "type": "java",
+            "name": "MATRIU1",
+            "request": "launch",
+            "mainClass": "MATRIU1",
+            "projectName": "Programacio_266419c3"
+        },
+        {
+            "type": "java",
+            "name": "AEA2_MATRIUS_CANVI",
+            "request": "launch",
+            "mainClass": "AEA2_MATRIUS_CANVI",
+            "projectName": "Programacio_266419c3"
+        },
+        {
+            "type": "java",
+            "name": "AEA2_MATRIUS_IMPARELLS",
+            "request": "launch",
+            "mainClass": "AEA2_MATRIUS_IMPARELLS",
+            "projectName": "Programacio_266419c3"
+        },
+        {
+            "type": "java",
+            "name": "VARIABLES",
+            "request": "launch",
+            "mainClass": "VARIABLES",
+            "projectName": "Programacio_266419c3"
+        },
+        {
+            "type": "jdk",
+            "request": "launch",
+            "name": "Launch Java App"
+        }
+    ]
+}

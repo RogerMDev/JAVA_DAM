@@ -1,0 +1,67 @@
+
+Commands: 
+Imprimir text: System.out.println("TEXT");
+Importar biblioteca: import <nomBiblioteca>;
+
+
+Tipus de dades:
+
+Booleà: True/false
+Enter: Qualsevol número positiu o negatiu sense decimal ("1");("-151515");
+Real: Qualsevol número positiu o negatiu amb decimals ("1.21");("-15.2654");ç
+Caracter: Qualsevol element bàsic de l'alfabet ("a");
+
+Declaració de variables:
+Booleà --> boolean
+Enter --> int
+Real --> double
+Caràcter --> char
+Paraula --> string
+
+
+Byte --> byte
+Enter curt --> short  (-32768 a 32768)
+Enter simple --> int  (-2,147,483,648 a 2,147,483,648)
+Enter llarg --> long  (-9,223,372,036,854,775,808 a 9,223,372,036,854,775,808)
+-Real de simple precisió --> float  (-3.40292347*10^38 a 3.40292347*10^38)
+Real de doble precisió --> double  (-4.94065645841246544*10^24 a 1.79769313486231570*10^308)
+
+
+
+Boolea AND &&:
+Cal que ambdós dades siguin certes per a donar resultat true
+(Un valor false --> operació false)
+
+Bolea OR II
+Nomès que una de les dues dades sigui certa el resultat és true.
+(Un valor true --> operació true)
+
+Negació - !
+Valor contrari del que tenim.
+
+Boolea igual ==
+Volem saber si les dades son iguals
+Pensem: "És cer que les dues dades estan en el mateix estat?"
+
+Boolea diferència !=
+Volem saber si les dades son diferents
+Pensem: "És cert que les dues dades estan en estats diferents?"
+
+Transformació de dades:
+
+Enters/Reals/Caracters igual ==
+Enters/Reals/Caracters major >
+Enters/Reals/Caracters major igual >=
+Enters/Reals/Caracters menor <
+Enters/Reals/Caracters menor igual <=
+
+Seqüencies d'escapament:
+
+\t == Tabulació
+\n == Salt de linia
+\' == El caràcter "cometa simple" (')
+\" == El caràcter "cometes dobles" (")
+\\ == El caràcter "contrabarra" (\)
+
+En les formules 'a'<'b' hauria de ser true i a la diapo posa false
+Com s'entén un '6'? Les comes s'utilitzen nomes per lletres? 
