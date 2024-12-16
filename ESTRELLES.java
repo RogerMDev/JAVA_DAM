@@ -39,6 +39,7 @@ public class ESTRELLES {
         imprimir(3,*);
         imprimir(5,-);
         imprimir(2,3);*/
+        int a = 3;
     }
 }
 
