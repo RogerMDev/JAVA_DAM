@@ -1,47 +1,38 @@
+import java.util.Scanner;
 
 public class ESTRELLES {
-
-    /*public static void ImprimirTodo(){
-        Estrellas(8);
-        Guiones(1);
-        Numeros(5,6);
-        Estrellas(3);
-        Guiones(4);
-        Numeros(3,2);
-    }*/
-
-    public static void Estrellas(int a){
-        for (int i = 0; i < a ; i++){
-            System.out.print("*");
-        }
-        System.out.println("");
-    }
-
-    public static void Guiones(int b){
-        for (int i = 0; i < b ; i++){
-            System.out.print("-");
-        }
-        System.out.println("");
-    }
-
-    public static void Numeros(int c,int d){
-        for (int i = 0; i < d ; i++){
-            System.out.print(c);
-        }
-        System.out.println("");
-    }
+    
+    static Scanner sc = new Scanner(System.in);
 
     public static void main(String[] args){
-        //ImprimirTodo();
-        /*imprimir(7,*);
-        imprimir(1,-);
-        imprimir(6,5);
-        imprimir(3,*);
-        imprimir(5,-);
-        imprimir(2,3);*/
-        int a = 3;
+       Funcion();
+    }
+    public static void Funcion(){
+        boolean on = true;
+
+        while( on ){
+            System.out.println("Di el simbolo quieres imprimir, si quieres parar, escribe: fin");
+            String symbolo  = sc.nextLine();
+            if (symbolo.equalsIgnoreCase("fin")){
+                on = false;
+            } else {System.out.println("Di la cantidad de simbolos quieres imprimir");
+                    int cant = sc.nextInt();
+                    if (cant >= 0){
+                        sc.nextLine();
+                    
+                        for (int i = 0; i < cant ; i++){
+                        System.out.print(symbolo);
+                        }
+                    } else {
+                        System.out.println("Error, por favor, pon una cantidad válida.");
+                    }   
+                System.out.println("");
+            }
+        }
     }
 }
+
+
 
 
 
