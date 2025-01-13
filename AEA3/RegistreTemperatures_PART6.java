@@ -1,11 +1,11 @@
 import java.util.Scanner;
 
-public class RegistreTemperatures_PART5 {
+public class RegistreTemperatures_PART6 {
   //Constants
   private static final int MAX_SETMANES = 52;
 
   //Variables globals
-  private boolean fi = false; // mentre FI sigui FALSE, executarem el programa
+  private boolean fi = false;
   private int numTemperatures = 0;
   private float[] temperatures = new float[MAX_SETMANES * 7];
   private int dia = 1;
@@ -13,12 +13,12 @@ public class RegistreTemperatures_PART5 {
 
   //M todes associats al problema general
   public static void main (String[] args) {
-    RegistreTemperatures_PART5 programa = new RegistreTemperatures_PART5();
+    RegistreTemperatures_PART6 programa = new RegistreTemperatures_PART6();
     programa.inici();
   }
 
   public void inici() {
-    while (!fi){
+    while (!fi) {
       mostrarMenu();
       tractarOpcio();
     }
@@ -27,11 +27,11 @@ public class RegistreTemperatures_PART5 {
   //Mètodes associats al punt 2 
   public void mostrarMenu() {
     System.out.println("\nBenvingut al registre de temperatures");
-    System .out.println("------------------------------");
-    System.out.println("[RT] Registrar temperatures setmanals."); //false
-    System.out.println("[MJ] Consultar temperatura mitjana.");//false
-    System.out.println("[DF] Consultar diferència màxima.");//false
-    System.out.println("[FI] Sortir.");//true
+    System .out.println("----------------------------");
+    System.out.println("[RT] Registrar temperatures setmanals.");
+    System.out.println("[MJ] Consultar temperatura mitjana.");
+    System.out.println("[DF] Consultar diferència màxima.");
+    System.out.println("[FI] Sortir.");
     System.out.print("Opció: ");
   }
 
@@ -93,7 +93,10 @@ public class RegistreTemperatures_PART5 {
     }
   }
 
-  public void finalitzarExecucio() { fi = true; }
+  //eliminem la funció finalitzarExecucio()
+  public void finalitzarExecucio() {
+    fi = true;
+  }
 
   public void llegirTemperaturesTeclat() {
     System.out.println("Escriu les temperatures d’aquesta setmana:");
@@ -112,7 +115,7 @@ public class RegistreTemperatures_PART5 {
   }
 
   public void incrementarData() {
-    //Quants dies t  aquest mes?
+    //Quants dies te aquest mes?
     int diesAquestMes = 0;
     if (mes == 2) {
       diesAquestMes = 28;
