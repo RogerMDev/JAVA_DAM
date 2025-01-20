@@ -1,7 +1,7 @@
 public class ARRAY100PARELLSCLASE {
     public static void main(String[] args){
 
-        int[][] matriuparells = new int[4][25];
+        int[][] matriuparells = new int[5][20];
 
         int parells = 0;
         

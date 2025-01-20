@@ -5,15 +5,16 @@ public class ESTRELLES {
     static Scanner sc = new Scanner(System.in);
 
     public static void main(String[] args){
-       Funcion();
+       ImprimirChars();
     }
-    public static void Funcion(){
+    public static void ImprimirChars(){
         boolean on = true;
 
         while( on ){
             System.out.println("Di el simbolo quieres imprimir, si quieres parar, escribe: fin");
             String symbolo  = sc.nextLine();
             if (symbolo.equalsIgnoreCase("fin")){
+                System.out.println("Cerrando el programa...");
                 on = false;
             } else {System.out.println("Di la cantidad de simbolos quieres imprimir");
                     int cant = sc.nextInt();
@@ -31,9 +32,4 @@ public class ESTRELLES {
         }
     }
 }
-
-
-
-
-
 
