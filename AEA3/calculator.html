@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <title>Calculadora con mejor aspecto</title>
+  <style>
+    /* Estilos generales */
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+      background: #f0f0f0;
+      font-family: Arial, sans-serif;
+    }
+
+    /* Contenedor principal de la calculadora */
+    .calculator {
+      background: #222;
+      padding: 20px;
+      border-radius: 10px;
+      /* Grid para organizar botones y display */
+      display: grid;
+      grid-template-columns: repeat(4, 70px);
+      grid-gap: 10px;
+      justify-content: center;
+    }
+
+    /* Display que muestra la operación/resultado */
+    #display {
+      grid-column: 1 / 5; /* Ocupa las 4 columnas */
+      height: 50px;
+      font-size: 20px;
+      text-align: right;
+      padding: 0 10px;
+      border: none;
+      border-radius: 5px;
+      background: #333;
+      color: #fff;
+      outline: none;
+    }
+
+    /* Estilo común para todos los botones */
+    button {
+      font-size: 18px;
+      border: none;
+      border-radius: 5px;
+      background: #555;
+      color: #fff;
+      cursor: pointer;
+      transition: background 0.2s;
+    }
+    button:hover {
+      background: #777;
+    }
+
+    /* Botón para limpiar (C) */
+    .clear-btn {
+      grid-column: 1 / 3; /* Que ocupe dos columnas */
+      background: #aa2c2c;
+    }
+    .clear-btn:hover {
+      background: #d53b3b;
+    }
+
+    /* Botón de resultado (=) */
+    .equal-btn {
+      grid-column: 3 / 5; /* Que ocupe dos columnas */
+      background: #2962ff;
+    }
+    .equal-btn:hover {
+      background: #3b7eff;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="calculator">
+    <!-- Display -->
+    <input type="text" id="display" readonly />
+
+    <!-- Botones fila 1 -->
+    <button onclick="appendValue('7')">7</button>
+    <button onclick="appendValue('8')">8</button>
+    <button onclick="appendValue('9')">9</button>
+    <button onclick="appendValue('/')">/</button>
+
+    <!-- Botones fila 2 -->
+    <button onclick="appendValue('4')">4</button>
+    <button onclick="appendValue('5')">5</button>
+    <button onclick="appendValue('6')">6</button>
+    <button onclick="appendValue('*')">*</button>
+
+    <!-- Botones fila 3 -->
+    <button onclick="appendValue('1')">1</button>
+    <button onclick="appendValue('2')">2</button>
+    <button onclick="appendValue('3')">3</button>
+    <button onclick="appendValue('-')">-</button>
+
+    <!-- Botones fila 4 -->
+    <button onclick="appendValue('0')">0</button>
+    <button onclick="appendValue('.')">.</button>
+    <button onclick="appendValue('+')">+</button>
+    <button onclick="calculateResult()" class="equal-small">=</button>
+	
+	<!-- Botones fila 5 -->
+    <button onclick="calculateSqrt()">sqrt</button>
+    <button onclick="calculateFactorial()">!</button>
+    <button onclick="appendValue('(')">(</button>
+    <button onclick="appendValue(')')">)</button>
+    
+    <!-- Botones fila 6 (botón limpiar a la izquierda y botón igual a la derecha) -->
+    <button class="clear-btn" onclick="clearDisplay()">C</button>
+    <button class="equal-btn" onclick="calculateResult()">=</button>
+  </div>
+
+  <script>
+    // Función para agregar valores (números u operadores) al display
+    function appendValue(val) {
+      document.getElementById("display").value += val;
+    }
+
+    // Función para calcular el resultado usando eval()
+    function calculateResult() {
+      const display = document.getElementById("display");
+      try {
+        display.value = eval(display.value) || "";
+      } catch {
+        display.value = "Error";
+      }
+    }
+
+    // Función para limpiar completamente el display
+    function clearDisplay() {
+      document.getElementById("display").value = "";
+    }
+	
+	function calculateSqrt(){
+		const display = document.getElementById("display");
+		display.value = Math.sqrt(display.value) ;
+	}
+	
+	function calculateFactorial(){
+		const display = document.getElementById("display");
+		display.value = factorial(display.value) ;
+	}
+	
+	
+	function factorial(num) {
+
+	let resultado = 1;
+	  for (let i = 1; i <= num; i++) {
+	  resultado = resultado * i; 
+	  }
+	  return resultado;
+	}
+ 
+ 
+     // --- Escuchar eventos de teclado en todo el documento ---
+    document.addEventListener('keydown', function(e) {
+      const display = document.getElementById("display");
+      const allowedKeys = ['0','1','2','3','4','5','6','7','8','9','.','+','-','*','/','(',')'];
+
+      // Si la tecla está permitida (número, operador o punto decimal)
+      if (allowedKeys.includes(e.key)) {
+        appendValue(e.key);
+      
+      // Si es Enter, calculamos
+      } else if (e.key === 'Enter') {
+        calculateResult();
+
+      // Si es Backspace, borramos un caracter
+      } else if (e.key === 'Backspace') {
+        display.value = display.value.slice(0, -1);
+
+      // Si es Escape, limpiamos el display
+      } else if (e.key === 'Escape') {
+        clearDisplay();
+      }
+    });
+
+  </script>
+</boy>
+</html>
+
+
+
