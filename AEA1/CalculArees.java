@@ -7,10 +7,9 @@ public class CalculArees {
 
     public static void inici(){
     Scanner sc = new Scanner(System.in);
-        CalculAreesMOD documentcalcul = new CalculAreesMOD();
-        System.out.println("Tria entre les seguents opcions: triangle, quadrat, rectangle, trapezi, rombe, paralelogram o cercle.");
-        String figura = sc.nextLine();
-        boolean pregunta = false;
+    CalculAreesMOD documentcalcul = new CalculAreesMOD();
+    System.out.println("Tria entre les seguents opcions: triangle, quadrat, rectangle, trapezi, rombe, paralelogram o cercle.");        String figura = sc.nextLine();
+    boolean pregunta = false;
 
         while (!pregunta ){
 
@@ -19,7 +18,7 @@ public class CalculArees {
             float costatQ = sc.nextFloat();
             documentcalcul.AreaQuadrat(costatQ);
             pregunta = true;
-
+            
             } else if ("triangle".equalsIgnoreCase(figura)) {
             System.out.println("Digues quant mesura la base del triangle");
             float base = sc.nextFloat();
@@ -76,5 +75,6 @@ public class CalculArees {
             pregunta = false;
             }
         }
+        sc.close();
     }
 }
