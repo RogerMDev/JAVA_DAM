@@ -37,6 +37,7 @@ public class LectorDatosTerminal {
                 noleido = false;
                 return s.nextFloat();
             } else {
+                System.out.println("Escriu un nombre enter o decimal");
                 s.next();
             }
         }

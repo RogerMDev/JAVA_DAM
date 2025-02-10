@@ -1,4 +1,4 @@
-package test;
+package AEA3;
 
 public class RegistreTemperatures_PART1 {
   //Constants

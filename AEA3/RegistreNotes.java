@@ -1,4 +1,4 @@
-package test;
+package AEA3;
 public class RegistreNotes {
   public static void main(String[] args) {
     RegistreNotes programa = new RegistreNotes();

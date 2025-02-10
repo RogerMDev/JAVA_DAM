@@ -1,4 +1,4 @@
-package test;
+package AEA3;
 
 public class CalculsArrayReals {
   public double calcularMaxim(double[] array) {

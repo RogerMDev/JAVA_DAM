@@ -1,4 +1,4 @@
-package test;
+package AEA3;
 import java.util.Scanner;
 
 public class RegistreTemperatures_PART6 {

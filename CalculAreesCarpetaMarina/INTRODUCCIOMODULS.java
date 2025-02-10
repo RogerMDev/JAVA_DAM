@@ -16,9 +16,10 @@ public float[] LlegirDades(){
     System.out.println("Introdueix pel teclat les 5 notes");
 
     for (int i =0; i < notes.length;i++){
-        System.out.println("Digues el la nota numero " + (i+1) + " :" );
+        System.out.println("Digues la nota numero " + (i+1) + " :" );
         notes[i] = lectordades.leerFloat();
         }
     return notes;
     }
 }
+

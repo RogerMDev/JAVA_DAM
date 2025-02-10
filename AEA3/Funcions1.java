@@ -1,4 +1,4 @@
-package test;
+package AEA3;
 public class Funcions1 {
 
     public static void main(String[] args){

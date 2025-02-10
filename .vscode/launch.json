@@ -6,6 +6,20 @@
     "configurations": [
         {
             "type": "java",
+            "name": "INTRODUCCIOMODULS",
+            "request": "launch",
+            "mainClass": "INTRODUCCIOMODULS",
+            "projectName": "Programacio JAVA_2fea1a5f"
+        },
+        {
+            "type": "java",
+            "name": "MainFormas",
+            "request": "launch",
+            "mainClass": "AEA3.testtest.test.FORMAS.MainFormas",
+            "projectName": "Programacio JAVA_2fea1a5f"
+        },
+        {
+            "type": "java",
             "name": "ESTRELLES",
             "request": "launch",
             "mainClass": "ESTRELLES",
