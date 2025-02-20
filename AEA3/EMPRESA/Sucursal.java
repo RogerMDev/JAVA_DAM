@@ -2,15 +2,40 @@ package AEA3.EMPRESA;
 
 public class Sucursal {
 
-    String nom;
+    private String nom;
 
-    String adreca;
+    private String adreca;
 
-    String telefon;
+    private String telefon;
 
-    String email;
+    private String email;
 
+    public void descansa(Transportista t){
 
-    
-    
+    }
+
+    public void treballa(Transportista t){
+
+    }
+
+    public void altaClient(Client c){
+
+    }
+
+    public void baixaClient(Client c){
+
+    }
+
+    public void altaEncarrec(Client c){
+
+    }
+
+    public void altaEncarrec(Client c,Transportista t, Encarrec e ){
+
+    }
+
+    public void anullaEncarrec(Encarrec e){
+
+    }
+
 }

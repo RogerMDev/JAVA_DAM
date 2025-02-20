@@ -4,11 +4,13 @@ public class INTRODUCCIOMODULS {
     private float[] notes = new float[5];
     LectorDatosTerminal lectordades = new LectorDatosTerminal();
     MaxMinMitjana maxminmitjana = new MaxMinMitjana();
-    public void main(String[] args){
-        LlegirDades();
+    public static void main(String[] args){
+        /*LlegirDades();
         maxminmitjana.TrobarMax(notes);
         maxminmitjana.TrobarMin(notes);
         maxminmitjana.Mitjana(notes);
+        */
+        System.out.println("HOLA");
     }
 
 public float[] LlegirDades(){

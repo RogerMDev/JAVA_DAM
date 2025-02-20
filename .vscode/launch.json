@@ -6,6 +6,13 @@
     "configurations": [
         {
             "type": "java",
+            "name": "TicTacToeActivitat",
+            "request": "launch",
+            "mainClass": "TicTacToe.TicTacToeActivitat",
+            "projectName": "Programacio JAVA_2fea1a5f"
+        },
+        {
+            "type": "java",
             "name": "INTRODUCCIOMODULS",
             "request": "launch",
             "mainClass": "INTRODUCCIOMODULS",
