@@ -4,7 +4,6 @@ public class TaulerActivitat {
     private char[][] tauler;
 
     public TaulerActivitat(){
-
         tauler = new char[3][3];
         for (int i = 0; i < tauler.length; i++ ){
             for (int j = 0; j < tauler[i].length; j++){
@@ -38,13 +37,12 @@ public class TaulerActivitat {
     }
 
     public boolean ComprovarResultat(){
-        for (int i = 0; i < 3; i++){
+        for (int i = 0; i < tauler.length; i++){
             if ((tauler[i][0] == 'X' && tauler[i][1] =='X' && tauler[i][2] == 'X') || 
             (tauler[0][i] == 'X' && tauler[1][i] == 'X' && tauler[2][i] == 'X')||
             (tauler [0][0] == 'X' && tauler [1][1] == 'X' && tauler [2][2] == 'X' )){  
                 System.out.println("Ha guanyat el jugador X");
                 return true;
-                
             }
             if ((tauler[i][0] == 'O' && tauler[i][1] =='O' && tauler[i][2] == 'O') || 
             (tauler[0][i] == 'O' && tauler[1][i] == 'O' && tauler[2][i] == 'O')||

@@ -3,12 +3,7 @@ package TicTacToe;
 import java.util.Scanner;
 
 public class JocActivitat {
-    private TaulerActivitat tauler;
-    private char jugadorActual;
-    private boolean guanyador;
-    private Scanner scanner;
     private char jugador = 'X';
-    private boolean CrearJoc;
     private final TaulerActivitat NouTaulell = new TaulerActivitat();
     Scanner sc = new Scanner(System.in);
     public int fila;
@@ -17,7 +12,6 @@ public class JocActivitat {
 
     public boolean IniciarJoc(){
         while (!NouTaulell.ComprovarResultat() || !NouTaulell.TaulellPle()){
-            NouTaulell.MostrarTaulell();
             jugadorActual();
             FerTorn();
             NouTaulell.ComprovarResultat();
