@@ -1,9 +1,10 @@
 package TicTacToe;
 
 import java.util.Scanner;
+import TICTACTOE_JAVA.TaulerActivitat;
 
 public class JocActivitat {
-    private char jugador = 'X';
+    public char jugador; 
     private final TaulerActivitat NouTaulell = new TaulerActivitat();
     Scanner sc = new Scanner(System.in);
     public int fila;
@@ -11,10 +12,10 @@ public class JocActivitat {
     public char jugador1;
 
     public boolean IniciarJoc(){
-        while (!NouTaulell.ComprovarResultat() || !NouTaulell.TaulellPle()){
+        jugador = EscollirJugador();
+        while (!NouTaulell.ComprovarResultat() && !NouTaulell.TaulellPle()){
             jugadorActual();
-            FerTorn();
-            NouTaulell.ComprovarResultat();
+            FerTorn(); 
             CambiarTorn();
             if (NouTaulell.ComprovarResultat()){
                 break;
@@ -23,8 +24,13 @@ public class JocActivitat {
         return true;
     }
 
-    public char jugadorActual(){
+    public void jugadorActual(){
         System.out.println("Torn del jugador: " + jugador);
+    }
+
+    public char EscollirJugador(){
+        System.out.println("Digues quin jugador comença el joc");
+        char jugador = sc.next().charAt(0);
         return jugador;
     }
 
@@ -40,8 +46,12 @@ public class JocActivitat {
         System.out.println("Diques les coordenades amb : (1: fila , 2: columna)");
         fila = sc.nextInt();
         columna = sc.nextInt();
-        //jugador1 = sc.next().charAt(0);
         NouTaulell.IntroduirValors(fila, columna, jugador);
         return true;
     }    
 }
+
+
+
+
+
