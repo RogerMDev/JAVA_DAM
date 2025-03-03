@@ -1,7 +1,6 @@
 package TicTacToe;
 
 import java.util.Scanner;
-import TICTACTOE_JAVA.TaulerActivitat;
 
 public class JocActivitat {
     public char jugador; 
@@ -42,6 +41,7 @@ public class JocActivitat {
         }
         return jugador;
     }
+
     public boolean FerTorn(){
         System.out.println("Diques les coordenades amb : (1: fila , 2: columna)");
         fila = sc.nextInt();

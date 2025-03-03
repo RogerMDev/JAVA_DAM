@@ -6,6 +6,20 @@
     "configurations": [
         {
             "type": "java",
+            "name": "Main_Animal",
+            "request": "launch",
+            "mainClass": "Main_Animal",
+            "projectName": "JAVA_DAM_ee87a9c"
+        },
+        {
+            "type": "java",
+            "name": "EX2",
+            "request": "launch",
+            "mainClass": "EX2",
+            "projectName": "JAVA_DAM_ee87a9c"
+        },
+        {
+            "type": "java",
             "name": "TicTacToeActivitat",
             "request": "launch",
             "mainClass": "TicTacToe.TicTacToeActivitat",
