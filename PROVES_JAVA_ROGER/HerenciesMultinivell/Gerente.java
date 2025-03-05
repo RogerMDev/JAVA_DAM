@@ -11,12 +11,12 @@ public class Gerente extends Empleado{
 
     @Override
     public double calcularSalario(){
-        return (this.salarioBase + this.bono);
+        return (getSalarioBase() + getBono());
     }
 
     @Override
     public void mostrarInfo(){
-        System.out.println("El nombre del empleado es: " + this.nombre + " y su salario base + su bono es: " + calcularSalario()); 
+        System.out.println("El nombre del empleado es: " + getNombre() + " y su salario base + su bono es: " + calcularSalario()); 
     }
 
     public double getBono() {

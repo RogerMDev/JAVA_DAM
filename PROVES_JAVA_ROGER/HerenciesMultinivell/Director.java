@@ -8,14 +8,14 @@ public class Director extends Gerente{
         this.accionesEmpresa = accionesEmpresa;
     }
 
-
     @Override
     public double calcularSalario(){
-        return (this.salarioBase + this.accionesEmpresa);
+        return (getSalarioBase() * getAccionesEmpresa());
     }
+
     @Override
     public void mostrarInfo(){
-        System.out.println("El nombre del empleado es: " + this.nombre + " y su salario base + sus acciones es: " + calcularSalario()); 
+        System.out.println("El nombre del empleado es: " + getNombre() + " y su salario base + sus acciones es: " + calcularSalario()); 
     }
 
     public int getAccionesEmpresa() {
@@ -26,6 +26,4 @@ public class Director extends Gerente{
         this.accionesEmpresa = accionesEmpresa;
     }
 
-
-    
 }

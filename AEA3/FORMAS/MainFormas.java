@@ -1,4 +1,4 @@
-package AEA3.FORMAS;
+package FORMAS;
 //package AEA3.testtest.test.FORMAS;
 
 public class MainFormas {

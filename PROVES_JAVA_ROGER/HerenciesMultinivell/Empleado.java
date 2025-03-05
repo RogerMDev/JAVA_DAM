@@ -1,8 +1,8 @@
 
 public class Empleado{
 
-    public String nombre;
-    public double salarioBase;
+    private String nombre;
+    private double salarioBase;
 
     public Empleado(String nom, double salari){
         this.nombre = nom;
@@ -34,5 +34,4 @@ public class Empleado{
         this.salarioBase = salarioBase;
     }
 
-    
 }
