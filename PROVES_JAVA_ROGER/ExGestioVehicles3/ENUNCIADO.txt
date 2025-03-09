@@ -1,0 +1,37 @@
+Ejercicio: Sistema de Gestión de Vehículos 🚗🚚🏍️
+Objetivo:
+Crear un programa que gestione diferentes tipos de vehículos utilizando POO, herencia y polimorfismo.
+
+Requisitos:
+✅ 1. Clase base Vehiculo
+Atributos:
+marca (String)
+modelo (String)
+año (int)
+velocidadMaxima (int)
+Métodos:
+Constructor para inicializar todos los atributos.
+mostrarInfo(): Muestra los datos del vehículo.
+acelerar(): Mensaje genérico de aceleración.
+✅ 2. Clases hijas:
+🚗 Clase Coche (hereda de Vehiculo)
+Atributo adicional:
+numPuertas (int)
+Métodos:
+Sobreescribe acelerar(), mostrando un mensaje específico para coches.
+🏍️ Clase Moto (hereda de Vehiculo)
+Atributo adicional:
+tipoManillar (String)
+Métodos:
+Sobreescribe acelerar(), mostrando un mensaje específico para motos.
+🚚 Clase Camion (hereda de Vehiculo)
+Atributo adicional:
+capacidadCarga (int)
+Métodos:
+Sobreescribe acelerar(), mostrando un mensaje específico para camiones.
+✅ 3. Clase SistemaGestionVehiculos
+Contiene un array de 5 vehículos (mezcla de coches, motos y camiones).
+Un menú interactivo con las opciones:
+Mostrar información de todos los vehículos.
+Acelerar un vehículo específico (según su tipo).
+Salir.
