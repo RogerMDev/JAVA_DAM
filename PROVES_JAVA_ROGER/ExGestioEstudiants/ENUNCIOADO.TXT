@@ -1,0 +1,40 @@
+                                Ejercicio: Sistema de Gestión de Estudiantes
+Objetivo: Crear un programa que gestione un conjunto de estudiantes, almacene sus calificaciones y permita realizar algunas operaciones sobre ellas.
+
+Requisitos:
+Clase Estudiante: Crea una clase llamada Estudiante que tenga los siguientes atributos:
+
+nombre (String)
+edad (int)
+calificaciones (un array de 5 enteros para las calificaciones de las asignaturas)
+
+La clase debe tener:
+Un constructor que reciba nombre, edad y las calificaciones como parámetros.
+Métodos getters y setters para acceder a los atributos privados.
+Un método que calcule el promedio de las calificaciones.
+Un método que determine si el estudiante aprueba o no (promedio >= 6).
+
+
+Clase Sistema de Gestión: Crea una clase llamada SistemaGestionEstudiantes que:
+Declare un array de 5 estudiantes (puedes usar Estudiante[]).
+Inicialice los estudiantes con datos de ejemplo.
+
+Ofrezca un menú que permita:
+Ver las calificaciones y el promedio de un estudiante.
+Modificar las calificaciones de un estudiante.
+Ver si un estudiante ha aprobado o no.
+Ver el promedio general de todos los estudiantes.
+Menú y control de flujo: Utiliza un bucle while para ofrecer al usuario un menú de opciones, y usa if y switch para controlar las elecciones.
+
+Uso de Arrays y Matrices:
+
+Para las calificaciones, utiliza arrays de enteros.
+Para los estudiantes, usa un array de objetos Estudiante.
+
+Pasos:
+Crea la clase Estudiante con los atributos, el constructor, los getters y setters.
+Añade el cálculo del promedio y el método para determinar si aprueba o no.
+Crea la clase SistemaGestionEstudiantes:
+Declara el array de estudiantes.
+Implementa el menú con las opciones indicadas.
+Interacción con el usuario: Usa la consola para pedir y mostrar datos.
