@@ -6,7 +6,7 @@ public class Habitacio extends Allotjament {
     public Habitacio(){
      
     }
-
+    
     public Habitacio(String nom, int capacitat, boolean disponible, int numLlits){
         super(nom, capacitat, disponible);
         this.numLlits = numLlits;
@@ -24,11 +24,11 @@ public class Habitacio extends Allotjament {
 
     @Override
     public void mostrarInformacio(){
-        System.out.print("Habitacio: " + getNom() + "(Llits: " + getNumLlits() + " )");
+        System.out.print("Habitacio: " + getNom() + " (Llits: " + getNumLlits() + " )");
         if (isDisponible()){
-            System.out.print("- Disponible");
+            System.out.print(" - Disponible");
         } else{
-            System.out.print(" No disponible");
+            System.out.print(" - No disponible");
         }
     }
 

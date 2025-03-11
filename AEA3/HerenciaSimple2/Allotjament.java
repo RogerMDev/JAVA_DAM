@@ -3,7 +3,6 @@ public class Allotjament{
     private String nom;
     private int capacitat; 
     private boolean disponible;
-
     public Allotjament(){
 
     }
@@ -43,6 +42,7 @@ public class Allotjament{
     }
 
     public void mostrarInformacio(){
+        System.out.println("a");
     }
 
     public boolean reservar(){
