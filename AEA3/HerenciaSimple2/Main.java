@@ -5,7 +5,6 @@ public class Main {
     static Scanner sc = new Scanner(System.in);
     static Allotjament[] totsAllotjaments = new Allotjament[6];
     
-
     public static void main(String[] args) {
         
         totsAllotjaments[0] = new Habitacio("Blue Room", 4,true,4);
@@ -28,35 +27,53 @@ public class Main {
         System.out.println("------------------------------------------------");
 
         int eleccio = sc.nextInt();
+        sc.nextLine();
         boolean mostrarMenu = true;
         while(mostrarMenu){
             if (eleccio == 1){
                 for (Allotjament a : totsAllotjaments){
                     if (a.isDisponible()){
+                        System.out.println("Mostrant información de: " + a.getNom());
                         a.mostrarInformacio();
-                    } else{}
+                        System.out.println("");
+                        System.out.println("");
+                    } 
+                    else{}
                 }
             } else if (eleccio == 2) {
+                System.out.println("Allotjaments disponibles:");
+                for (Allotjament a : totsAllotjaments){
+                    if (a.isDisponible()){
+                        System.out.println("Mostrant información de: " + a.getNom());
+                        a.mostrarInformacio();
+                        System.out.println("");
+                        System.out.println("");
+                    } else{}
+                }
                 System.out.println("Digues el nom del allotjament que vols reservar");
                 String apartamentAReservar = sc.nextLine();
                 for (Allotjament a : totsAllotjaments){
-                    if (a.getNom().equalsIgnoreCase(apartamentAReservar) && a.isDisponible()){
+                    if (a.getNom().toLowerCase().equalsIgnoreCase(apartamentAReservar)){
+                        if (a.isDisponible()){
                         a.setDisponible(false);
                         System.out.println("Reserva completada a l'allotjament " + a.getNom() + " correctament! Gràcies!");
-                    }else{
-                        System.out.println("L'allotjament " + a.getNom() + " no està disponible per reservar.");
-                    }
+                        } else{
+                            System.out.println("L'allotjament " + a.getNom() + " no està disponible per reservar.");
+                        }
+                    }else{}
                 }
             } else if(eleccio == 3){
                 System.out.println("Digues el nom del allotjament que vols alliberar");
                 String apartamentAReservar = sc.nextLine();
                 for (Allotjament a : totsAllotjaments){
-                    if (a.getNom().equalsIgnoreCase(apartamentAReservar) && !a.isDisponible()){
-                        a.setDisponible(true);
-                        System.out.println("Allotjament "+ a.getNom() + " alliberat correctament! Gràcies!");
-                    }else{
-                        System.out.println("L'allotjament desitjat ja està disponible per reservar.");
-                    }
+                    if (a.getNom().toLowerCase().equalsIgnoreCase(apartamentAReservar)){
+                        if (a.isDisponible()){
+                            System.out.println("L'allotjament desitjat ja està disponible per reservar.");
+                        }else{
+                            a.setDisponible(true);
+                            System.out.println("Allotjament "+ a.getNom() + " alliberat correctament! Gràcies!");
+                        }
+                    }else{}
                 }
             } else if (eleccio == 4){
 
@@ -65,6 +82,9 @@ public class Main {
             } else{
                 System.out.println("Selecció incorrecte. Selecciona un nombre del menú. ");
             }
+            System.out.println("Digues la següent opció");
+            eleccio = sc.nextInt();
+            sc.nextLine();
         }
     }
 }

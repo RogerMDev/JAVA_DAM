@@ -2,14 +2,16 @@ public class Habitacio extends Allotjament {
     
     private int numLlits;
     private double preuPerNit;
+    private boolean disponible;
 
     public Habitacio(){
      
     }
     
     public Habitacio(String nom, int capacitat, boolean disponible, int numLlits){
-        super(nom, capacitat, disponible);
+        super(nom, capacitat);
         this.numLlits = numLlits;
+        this.disponible = disponible;
     }
 
     @Override
@@ -31,6 +33,15 @@ public class Habitacio extends Allotjament {
             System.out.print(" - No disponible");
         }
     }
+    @Override
+    public boolean isDisponible(){
+        return disponible;
+    }
+
+    @Override
+    public void setDisponible(boolean disponible){
+        this.disponible = disponible;
+    }
 
     public int getNumLlits() {
         return numLlits;
@@ -39,6 +50,4 @@ public class Habitacio extends Allotjament {
     public void setNumLlits(int numLlits) {
         this.numLlits = numLlits;
     }
-
-    
 }

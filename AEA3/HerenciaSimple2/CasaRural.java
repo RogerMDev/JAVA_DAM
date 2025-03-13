@@ -3,15 +3,17 @@ public class CasaRural extends Allotjament {
     private boolean teJardi;
     private boolean tePiscina;
     private double preuPerNit;
+    private boolean disponible;
 
     public CasaRural(){
 
     }
 
     public CasaRural(String nom,int capacitat, boolean disponible, boolean teJardi, boolean tePiscina){
-        super(nom,capacitat,disponible);
+        super(nom,capacitat);
         this.teJardi = teJardi;
         this.tePiscina = tePiscina;
+        this.disponible = disponible;
     }
 
     public boolean isTeJardi() {
@@ -58,6 +60,16 @@ public class CasaRural extends Allotjament {
         } else{
             System.out.print(" - No disponible");
         }
+    }
+
+    @Override
+    public boolean isDisponible(){
+        return disponible;
+    }
+
+    @Override
+    public void setDisponible(boolean disponible){
+        this.disponible = disponible;
     }
     
 }

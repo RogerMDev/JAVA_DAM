@@ -3,15 +3,17 @@ public class Apartament extends Allotjament {
     private int habitacions;
     private boolean teCuina;
     private double preuPerNit;
+    private boolean disponible;
 
     public Apartament(){
 
     }
 
     public Apartament(String nom, int capacitat, boolean disponible, int habitacions, boolean teCuina){
-        super(nom,capacitat, disponible);
+        super(nom,capacitat);
         this.habitacions = habitacions;
         this.teCuina = teCuina;
+        this.disponible = disponible;
     }
 
     public int getHabitacions() {
@@ -52,4 +54,13 @@ public class Apartament extends Allotjament {
 
     }
     
+    @Override
+    public boolean isDisponible(){
+        return disponible;
+    }
+
+    @Override
+    public void setDisponible(boolean disponible){
+        this.disponible = disponible;
+    }
 }
