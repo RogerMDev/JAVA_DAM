@@ -46,14 +46,14 @@ public class CasaRural extends Allotjament {
     public void mostrarInformacio(){
         System.out.print("Casa Rural: " + getNom() + " (Jardí: ");
         if (isTeJardi()){
-            System.out.print("Sí,");
+            System.out.print(" Sí,");
         } else{
-            System.out.print("No,");
+            System.out.print(" No,");
         }
         if (isTePiscina()){
-            System.out.print("Piscina: Sí)");
+            System.out.print(" Piscina: Sí)");
         } else{
-            System.out.print("Piscina: No)");
+            System.out.print(" Piscina: No)");
         }
         if (isDisponible()){
             System.out.print(" - Disponible");

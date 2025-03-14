@@ -42,9 +42,9 @@ public class Apartament extends Allotjament {
     public void mostrarInformacio(){
         System.out.print("Apartament: " + getNom() + " (Habitacions: " + getHabitacions() + ", Cuina:");
         if (isTeCuina()){
-            System.out.print("Sí)");
+            System.out.print(" Sí)");
         } else{
-            System.out.print("No)");
+            System.out.print(" No)");
         }
         if (isDisponible()){
             System.out.print(" - Disponible");

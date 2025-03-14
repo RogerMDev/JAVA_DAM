@@ -1,7 +1,8 @@
 public abstract class Allotjament{
 
     private String nom;
-    private int capacitat; 
+    private int capacitat;
+    private boolean disponible; 
     public Allotjament(){
 
     }
@@ -27,9 +28,13 @@ public abstract class Allotjament{
         this.capacitat = capacitat;
     }
 
-    public abstract boolean isDisponible();
+    public boolean isDisponible(){
+        return disponible;
+    }
 
-    public abstract void setDisponible(boolean disponible);
+    public void setDisponible(boolean disponible){
+        this.disponible = disponible;
+    }
     
     public double calcularPreuPerNit(){
         return 0;

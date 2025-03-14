@@ -25,7 +25,7 @@ public class Main {
         System.out.println("4. Cerca personalitzada");
         System.out.println("5. Sortir del programa");
         System.out.println("------------------------------------------------");
-
+        
         int eleccio = sc.nextInt();
         sc.nextLine();
         boolean mostrarMenu = true;
@@ -76,7 +76,39 @@ public class Main {
                     }else{}
                 }
             } else if (eleccio == 4){
-
+                System.out.println("Selecciona com vols fer la cerca personalitzada:");
+                System.out.println("1. Preu máxim per nit");
+                System.out.println("2. Caracteristiques específiques");
+                for (Allotjament a : totsAllotjaments){
+                    System.out.println(a.calcularPreuPerNit());
+                }
+                int seleccio = sc.nextInt();
+                if (seleccio == 1){
+                    System.out.println("Digues quin és el preu màxim per nit que vols filtrar filtrar");
+                    double preuMaxPerNit = sc.nextDouble();
+                    System.out.println("Els següents allotjaments tenen un preu per nit inferior a la cuantitat introduida: ");
+                    for (Allotjament a : totsAllotjaments){
+                        if (preuMaxPerNit >= a.calcularPreuPerNit()){
+                            a.mostrarInformacio();
+                            System.out.println("");
+                            System.out.println("");    
+                        } else{}
+                    }
+                } else if (seleccio == 2){
+                    System.out.println("Digues quin aspecte vols cercar:");
+                    System.out.println("1. Cuina disponible (Nomès disponible per apartaments)");
+                    System.out.println("2. Jardí o piscina disponible (Nomès disponible per cases rurals)");
+                    int aspectecercat = sc.nextInt();
+                    if (aspectecercat == 1){
+                        for (Allotjament a : totsAllotjaments){
+                            if (a.getClass() == Apartament.class){
+                                if (a.isTeCuina()){ ****************
+                                    
+                                }
+                            }
+                        }
+                    }
+                }
             } else if (eleccio == 5){
                 mostrarMenu = false;
             } else{
