@@ -56,9 +56,8 @@ public class MainAlquiler {
                 System.out.println("Opcion no valida");
                 i--;
                 break;
-            
+            }
         }
-    }
     while (mostrarMenu) {
         System.out.println("\nMenú:");
         System.out.println("1. Mostrar alquileres disponibles");

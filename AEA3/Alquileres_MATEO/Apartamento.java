@@ -36,3 +36,4 @@ public class Apartamento extends Alquiler {
         System.out.println("Cocina: " + this.getCocina());
     }
 }
+
