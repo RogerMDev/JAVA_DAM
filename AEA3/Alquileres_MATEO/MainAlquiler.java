@@ -109,10 +109,12 @@ public class MainAlquiler {
                     for (int i = 0; i < alq.length; i++)
                         if (alq[i].getClass().equals(Habitacion.class)){
                             Habitacion h = (Habitacion) alq[i];
-                            if (h.costeNoche(numPersonas) <= max)
+                            if (h.costeNoche(numPersonas) <= max){
                                 h.mostrarInformacio();
-                        }
-                    break;
+                            } }else {
+                                System.out.println("No hay alojamientos disponibles con esas características");
+                            }
+                        break;
                     case "apartamento":
                         System.out.println("Introdue el máximo de precio por noche: ");
                         max = s.nextInt();
@@ -123,8 +125,11 @@ public class MainAlquiler {
                         for (int i = 0; i < alq.length; i++)
                             if (alq[i].getClass().equals(Apartamento.class)){
                                 Apartamento a = (Apartamento) alq[i];
-                                if (a.costeNoche(numPersonas) <= max && a.getCocina() == cocina)
+                                if (a.costeNoche(numPersonas) <= max && a.getCocina() == cocina){
                                     a.mostrarInformacio();
+                                } else {
+                                    System.out.println("No hay alojamientos disponibles con esas características");
+                                }
                             }
                         break;
                     case "casa rural":
@@ -140,13 +145,16 @@ public class MainAlquiler {
                         for (int i = 0; i < alq.length; i++)
                             if (alq[i].getClass().equals(CasaRural.class)){
                                 CasaRural cR = (CasaRural) alq[i];
-                                if (cR.costeNoche(numPersonas) <= max && cR.getPiscina() == piscina && cR.getJardin() == jardin)
+                                if (cR.costeNoche(numPersonas) <= max && cR.getPiscina() == piscina && cR.getJardin() == jardin){
                                     cR.mostrarInformacio();
-                            }
+                                } else {
+                                    System.out.println("No hay alojamientos disponibles con esas características");
+                                }
                         break;
                     }
                 default :
                 mostrarMenu = false;
+                }
             }
         }
     }
