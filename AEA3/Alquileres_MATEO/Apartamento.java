@@ -30,10 +30,18 @@ public class Apartamento extends Alquiler {
     }
 
     @Override
+    public double costeTotal(int numPersones, int numNoches){
+        return (costeNoche(numPersones)*numNoches);
+    }
+
+    @Override
     public void mostrarInformacio() {
         super.mostrarInformacio();
-        System.out.println("Habitacions: " + this.getHab());
-        System.out.println("Cocina: " + this.getCocina());
+        System.out.println("Habitaciones: " + this.getHab());
+        if (this.getCocina()){
+            System.out.println("Cocina: Sí");
+        } else{
+            System.out.println("Cocina: No");
+        }
     }
 }
-

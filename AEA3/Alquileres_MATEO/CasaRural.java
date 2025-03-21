@@ -31,11 +31,26 @@ public class CasaRural extends Alquiler {
         else
             return 150;
     }
+
+    @Override
+    public double costeTotal(int numPersones, int numNoches){
+        return (costeNoche(numPersones)*numNoches);
+    }
     
     @Override
     public void mostrarInformacio() {
         super.mostrarInformacio();
-        System.out.println("Piscina: " + this.getPiscina());
-        System.out.println("Jardin: " + this.getJardin());
+        System.out.print("Piscina: ");
+        if (this.getPiscina()){
+            System.out.println(" Sí");
+        } else{
+            System.out.println(" No");
+        }
+        System.out.print("Jardin: ");
+        if ( this.getJardin()){
+            System.out.println(" Sí");
+        } else {
+            System.out.println(" No");
+        }
     }
 }

@@ -32,6 +32,10 @@ public class Alquiler {
         return 0;
     }
 
+    public double costeTotal(int numPersones, int numNoches) {
+        return 0;
+    }
+
     public void mostrarInformacio() {
         System.out.println(this.getNombre());
         System.out.println("Capacidad: " + this.getCapacidad());
@@ -41,7 +45,7 @@ public class Alquiler {
         } else{
             System.out.println("No");
         }
-        System.out.println("Coste de noche: " + costeNoche(capacidad));
+        System.out.println("Coste de noche: " + costeNoche(capacidad) + " euros");
     }
 
     public void reservar() {

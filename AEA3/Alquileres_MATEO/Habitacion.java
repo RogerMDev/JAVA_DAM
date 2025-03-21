@@ -21,6 +21,11 @@ public class Habitacion extends Alquiler {
     }
 
     @Override
+    public double costeTotal(int numPersones, int numNoches){
+        return (costeNoche(numPersones)*numNoches);
+    }
+    
+    @Override
     public void mostrarInformacio() {
         super.mostrarInformacio();
         System.out.println("Numero de camas: " + this.getNumCamas());
