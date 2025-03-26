@@ -10,7 +10,7 @@ public class FeedBack {
             System.out.println("Has encertat!");
             fi = true;
         } else {
-            System.out.println("Continua intentant−ho!");
+            System.out.println("Continua intentant" + "-" + "ho!");
         }
         return fi;
     }

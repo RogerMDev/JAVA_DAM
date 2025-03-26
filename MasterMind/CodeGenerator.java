@@ -16,5 +16,4 @@ public class CodeGenerator {
         int index = (int) (nano % abc.length());
         return abc.charAt(index);
     }
-
 }
