@@ -1,7 +1,5 @@
-public class Player {
+public abstract class Player {
     
-    public String makeGuess(){
-        return "";
-    }
+    public abstract String makeGuess();
     
 }

@@ -7,7 +7,7 @@ public class MasterMind {
     public final static String abc = "abcdefghijklmnopqrstuvwxyz";
     public static String secret = "";
     public static String resposta = "";
-    public int LONG_SECRET = 3;
+    public static int LONG_SECRET = 3;
 
     HumanPlayer playerH = new HumanPlayer();
     FeedBack feedb = new FeedBack();
@@ -19,7 +19,8 @@ public class MasterMind {
     }
 
     public void inici() {
-        //secret = generarParaulaSecreta(); Substituir la funcion generarParaulsaSecreta() por la funcion GenerateCode().
+        CodeGenerator codeGen = new CodeGenerator();
+        secret = codeGen.GenerateCode();
         boolean encertat = false;
         while (!encertat) {
             resposta = playerH.makeGuess();
