@@ -1,0 +1,12 @@
+
+MastermindGame (classe principal que gestiona el joc).
+
+CodeGenerator (classe per generar el codi secret): String generateCode()
+
+Player (classe base per a jugadors): String makeGuess()
+
+HumanPlayer (subclasse de Player per a jugadors humans): String makeGuess()
+
+Feedback (classe per gestionar la resposta de cada intent): String getFeedback(String secret, String guess)
+
+-----------------------------------------------------------------------------------------------------------

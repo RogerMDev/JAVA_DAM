@@ -6,6 +6,27 @@
     "configurations": [
         {
             "type": "java",
+            "name": "MainAlquiler",
+            "request": "launch",
+            "mainClass": "AEA3.Alquileres_MATEO.MainAlquiler",
+            "projectName": "JAVA_DAM_ee87a9c"
+        },
+        {
+            "type": "java",
+            "name": "MasterMind",
+            "request": "launch",
+            "mainClass": "MasterMind",
+            "projectName": "JAVA_DAM_ee87a9c"
+        },
+        {
+            "type": "java",
+            "name": "MasterMind",
+            "request": "launch",
+            "mainClass": "MasterMind.MasterMind",
+            "projectName": "JAVA_DAM_ee87a9c"
+        },
+        {
+            "type": "java",
             "name": "Main_Animal",
             "request": "launch",
             "mainClass": "Main_Animal",
