@@ -2,9 +2,10 @@ import java.util.Scanner;
 
 public class HumanPlayer extends Player{
 
+    static Scanner lector = new Scanner(System.in);
+
     @Override
     public String makeGuess(){
-        Scanner lector = new Scanner(System.in);
         boolean lecturaOk = false;
         String res = null;
         do {
@@ -33,7 +34,28 @@ public class HumanPlayer extends Player{
                 return false;
             }
         }
-        //Si tot es compleix, segur que és correcte
+        //Si tot es compleix, segur que és correcte.
         return true;
+    }
+
+    @Override
+    public void OmplirDades(){
+        System.out.println("Digues el teu nom");
+        String nomUser = lector.nextLine();
+        this.setNom(nomUser);
+        System.out.println("Digues el teu cognom");
+        String cognomUser = lector.nextLine();
+        this.setCognom(cognomUser);
+        System.out.println("Digues la teva edat");
+        int edatUser = lector.nextInt();
+        this.setEdat(edatUser);
+        System.out.println("Digues el teu nivell (0 --> principant | 1 --> Intermig |2 --> Expert)");
+        int nivellUser = lector.nextInt();
+        this.setNivell(nivellUser);
+    }
+
+    @Override
+    public void presentacio(){
+        System.out.println("Benvingut/da " + this.getNom() + " " + this.getCognom() + " , bona sort!!");
     }
 }

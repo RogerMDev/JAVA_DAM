@@ -9,18 +9,15 @@ public class MasterMind {
     public static String resposta = "";
     public static int LONG_SECRET = 3;
 
-    HumanPlayer playerH = new HumanPlayer();
-    FeedBack feedb = new FeedBack();
+    static HumanPlayer playerH = new HumanPlayer();
+    static FeedBack feedb = new FeedBack();
+    static CodeGenerator codeGen = new CodeGenerator();
 
     //Mètodes associats al problema general
     public static void main(String[] args) {
-        MasterMind programa = new MasterMind();
-        programa.inici();
-    }
-
-    public void inici() {
-        CodeGenerator codeGen = new CodeGenerator();
         secret = codeGen.GenerateCode();
+        playerH.OmplirDades();
+        playerH.presentacio();
         boolean encertat = false;
         while (!encertat) {
             resposta = playerH.makeGuess();
@@ -28,5 +25,3 @@ public class MasterMind {
         }
     }
 }
-
-

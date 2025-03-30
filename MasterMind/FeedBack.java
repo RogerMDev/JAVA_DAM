@@ -2,6 +2,7 @@ public class FeedBack {
     
     //Param. entrada: la resposta i el valor secret (dos String)
     //Param. sortida: si s’ha encertat (un booleà)
+    
     public boolean resoldreResposta(String secret, String resposta) {
         String res = generarPista(secret, resposta);
         boolean fi = false;
