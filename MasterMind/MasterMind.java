@@ -17,6 +17,7 @@ public class MasterMind {
     public static void main(String[] args) {
         secret = codeGen.GenerateCode();
         playerH.OmplirDades();
+        System.out.println("holapadel");
         playerH.presentacio();
         boolean encertat = false;
         while (!encertat) {
