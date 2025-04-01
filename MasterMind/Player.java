@@ -42,5 +42,5 @@ public abstract class Player {
     public void setNivell(int nivell) {
         this.nivell = nivell;
     }
-
+    
 }

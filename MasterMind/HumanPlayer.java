@@ -59,3 +59,5 @@ public class HumanPlayer extends Player{
         System.out.println("Benvingut/da " + this.getNom() + " " + this.getCognom() + " , bona sort!!");
     }
 }
+
+
