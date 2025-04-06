@@ -16,7 +16,7 @@ public class ChildPlayer extends Player{
         boolean lecturaOk = false;
         String res = null;
         do {
-            System.out.print("Escriu " + MasterMind.SHORT_SECRET + " lletres miníscules: ");
+            System.out.print("Escriu " + MasterMind.child_random_word.length() + " lletres miníscules: ");
             res = lector.next();
             lector.nextLine();
             lecturaOk = comprovarResposta(res);
@@ -28,7 +28,7 @@ public class ChildPlayer extends Player{
     }
 
     public boolean comprovarResposta(String resposta) {
-        if (resposta.length() != MasterMind.SHORT_SECRET) {
+        if (resposta.length() != MasterMind.child_random_word.length()) {
         //Ja sabem que no és correcte.
         //Podem acabar l’execució del mètode immediatament.
             return false;

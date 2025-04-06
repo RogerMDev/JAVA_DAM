@@ -2,9 +2,11 @@ public class FeedBack {
     
     //Param. entrada: la resposta i el valor secret (dos String)
     //Param. sortida: si s’ha encertat (un booleà)
+    public String res = "";
     
     public boolean resoldreResposta(String secret, String resposta) {
-        String res = generarPista(secret, resposta);
+        res = "";
+        res = generarPista(secret, resposta);
         boolean fi = false;
         System.out.print("La resposta és [" + res + "].");
         if (resposta.equals(secret)){
@@ -35,4 +37,13 @@ public class FeedBack {
         }
         return res;
     }
+
+    public String getRes() {
+        return res;
+    }
+
+    public void setRes(String res) {
+        this.res = res;
+    }
+
 }

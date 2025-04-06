@@ -1,25 +1,22 @@
+import java.util.Random;
+
 public class CodeGenerator {
 
-    public int LONG_SECRET = 3;
+    public static Random rand = new Random();
 
     public CodeGenerator(){
         
     }
-
     public String GenerateLongCode(){
-        String res = "";
-        for (int i = 0; i < MasterMind.LONG_SECRET; i++) {
-            res = res + generarLletraAleatoria();
-        }
-        return res;
+        String paraulaLlargaSeleccionada = (MasterMind.getAdult_words())[rand.nextInt(20)];
+        MasterMind.adult_random_word = paraulaLlargaSeleccionada;
+        return paraulaLlargaSeleccionada;
     }
 
     public String GenerateShortCode(){
-        String res = "";
-        for (int i = 0; i < MasterMind.SHORT_SECRET; i++) {
-            res = res + generarLletraAleatoria();
-        }
-        return res;
+        String paraulaCurtaSeleccionada = (MasterMind.getChild_words())[rand.nextInt(20)];
+        MasterMind.child_random_word = paraulaCurtaSeleccionada;
+        return paraulaCurtaSeleccionada;
     }
 
     public char generarLletraAleatoria() {

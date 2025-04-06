@@ -9,7 +9,7 @@ public class HumanPlayer extends Player{
         boolean lecturaOk = false;
         String res = null;
         do {
-            System.out.print("Escriu " + MasterMind.LONG_SECRET + " lletres miníscules: ");
+            System.out.print("Escriu " + MasterMind.adult_random_word.length() + " lletres miníscules: ");
             res = lector.next();
             lector.nextLine();
             lecturaOk = comprovarResposta(res);
@@ -21,7 +21,8 @@ public class HumanPlayer extends Player{
     }
 
     public boolean comprovarResposta(String resposta) {
-        if (resposta.length() != MasterMind.LONG_SECRET) {
+        if (resposta.length() != MasterMind.adult_random_word.length()) {
+            System.out.println("HOLA1");
         //Ja sabem que no és correcte.
         //Podem acabar l’execució del mètode immediatament.
             return false;
@@ -29,6 +30,7 @@ public class HumanPlayer extends Player{
         for (int i = 0; i < resposta.length(); i++) {
             char c = resposta.charAt(i);
             if ( -1 == MasterMind.abc.indexOf(c)){
+                System.out.println("HOLA2");
             //Ja sabem que no és correcte.
             //Podem acabar l’execució del mètode immediatament.
                 return false;
@@ -46,12 +48,6 @@ public class HumanPlayer extends Player{
         System.out.println("Digues el teu cognom");
         String cognomUser = lector.nextLine();
         this.setCognom(cognomUser);
-        System.out.println("Digues la teva edat");
-        int edatUser = lector.nextInt();
-        this.setEdat(edatUser);
-        System.out.println("Digues el teu nivell (0 --> principant | 1 --> Intermig |2 --> Expert)");
-        int nivellUser = lector.nextInt();
-        this.setNivell(nivellUser);
     }
 
     @Override
