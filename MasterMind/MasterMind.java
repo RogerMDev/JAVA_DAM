@@ -10,6 +10,7 @@ public class MasterMind {
     public static String secret = "";
     public static String resposta = "";
     public static String resposta2 = "";
+    //Paraules
     public static String[] adult_words = {"camaleo", "tempesta", "escorpi", "llibertat", "trencaclosques", "espectre", "desxifrar", "paraigua", "xocolata", "esquerra", "fletxa", "ocell", "tardor", "espasa", "escaleta", "tambori", "ventall", "esquirol", "llimona", "escalfor"};
     public static String[] child_words = {"poma", "llop", "casa", "peix", "llum", "bany", "cent", "cera", "sola", "tard", "eina", "vent", "roca", "foca", "brou", "clau", "flor", "cara", "tren", "olla"};
     public static String adult_random_word = "";
