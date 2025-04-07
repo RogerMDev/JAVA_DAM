@@ -1,61 +1,92 @@
 import java.util.*;
 
 public class IAPlayer extends Player {
-    private List<Character> letrasDisponibles;
-    private List<Character> letrasSeguras;
-    private List<Character> letrasDescartadas;
-    private char[] posicionesConocidas;
-    private String ultimoIntento;
-    private int longitudPalabra;
+    private List<Character> lletresDisponibles;
+    private List<Character> lletresSegures;
+    private List<Character> lletresDescartades;
+    private char[] posicionsConegudes;
+    private char[] posicionsConegudesChild;
+    private String ultimIntent;
+    private int longitudParaulaLlarga;
+    private int longitudParaulaCurta;
     private Random random;
 
     public IAPlayer() {
         this.random = new Random();
-        this.letrasDisponibles = new ArrayList<>();
-        this.letrasSeguras = new ArrayList<>();
-        this.letrasDescartadas = new ArrayList<>();
-        this.longitudPalabra = MasterMind.adult_random_word.length();
-        this.posicionesConocidas = new char[longitudPalabra];
+        this.lletresDisponibles = new ArrayList<>();
+        this.lletresSegures = new ArrayList<>();
+        this.lletresDescartades = new ArrayList<>();
+        this.longitudParaulaLlarga = MasterMind.adult_random_word.length();
+        this.longitudParaulaCurta = MasterMind.child_random_word.length();
+        this.posicionsConegudes = new char[longitudParaulaLlarga];
+        this.posicionsConegudesChild = new char[longitudParaulaCurta];
 
         for (char c : MasterMind.abc.toCharArray()) {
-            letrasDisponibles.add(c);
+            lletresDisponibles.add(c);
         }
     }
 
     @Override
     public String makeGuess() {
-        char[] intento = new char[longitudPalabra];
+        char[] intento = new char[longitudParaulaLlarga];
 
         // Paso 1: Colocar letras en posiciones conocidas
-        for (int i = 0; i < longitudPalabra; i++) {
-            if (posicionesConocidas[i] != 0) {
-                intento[i] = posicionesConocidas[i];
+        for (int i = 0; i < longitudParaulaLlarga; i++) {
+            if (posicionsConegudes[i] != 0) {
+                intento[i] = posicionsConegudes[i];
             } else {
                 intento[i] = seleccionarMejorLetra();
             }
         }
+    
+        this.ultimIntent = new String(intento);
+        return ultimIntent;
+    }
 
-        this.ultimoIntento = new String(intento);
-        return ultimoIntento;
+    public String makeGuessChild() {
+        char[] intento = new char[longitudParaulaCurta];
+
+        // Paso 1: Colocar letras en posiciones conocidas
+        for (int i = 0; i < longitudParaulaCurta; i++) {
+            if (posicionsConegudesChild[i] != 0) {
+                intento[i] = posicionsConegudesChild[i];
+            } else {
+                intento[i] = seleccionarMejorLetraChild();
+            }
+        }
+        this.ultimIntent = new String(intento);
+        return ultimIntent;
     }
 
     private char seleccionarMejorLetra() {
         // Seleccionar una letra no descartada al azar
-        List<Character> opciones = new ArrayList<>(letrasDisponibles);
-        opciones.removeAll(letrasDescartadas);
+        List<Character> opciones = new ArrayList<>(lletresDisponibles);
+        opciones.removeAll(lletresDescartades);
 
         // Priorizar letras seguras que no estén ya colocadas
-        for (char letraSegura : letrasSeguras) {
+        for (char letraSegura : lletresSegures) {
             if (!yaEstaColocada(letraSegura)) {
                 return letraSegura;
             }
         }
-
         return opciones.isEmpty() ? getLetraAleatoria() : opciones.get(random.nextInt(opciones.size()));
     }
 
+    private char seleccionarMejorLetraChild() {
+        List<Character> opciones = new ArrayList<>(lletresDisponibles);
+        opciones.removeAll(lletresDescartades);
+    
+        for (char letraSegura : lletresSegures) {
+            if (!yaEstaColocadaChild(letraSegura)) {
+                return letraSegura;
+            }
+        }
+        return opciones.isEmpty() ? getLetraAleatoria() : opciones.get(random.nextInt(opciones.size()));
+    }
+    
+
     private boolean yaEstaColocada(char letra) {
-        for (char posicion : posicionesConocidas) {
+        for (char posicion : posicionsConegudes) {
             if (posicion == letra) {
                 return true;
             }
@@ -63,33 +94,63 @@ public class IAPlayer extends Player {
         return false;
     }
 
+    private boolean yaEstaColocadaChild(char letra) {
+        for (char posicion : posicionsConegudesChild) {
+            if (posicion == letra) {
+                return true;
+            }
+        }
+        return false;
+    }
+    
+
     private char getLetraAleatoria() {
-        return letrasDisponibles.get(random.nextInt(letrasDisponibles.size()));
+        return lletresDisponibles.get(random.nextInt(lletresDisponibles.size()));
     }
 
     public void recibirFeedback(String feedback) {
-        if (ultimoIntento == null || feedback == null) return;
+        if (ultimIntent == null || feedback == null) return;
 
         for (int i = 0; i < feedback.length(); i++) {
-            char letra = ultimoIntento.charAt(i);
+            char letra = ultimIntent.charAt(i);
             char simbolo = feedback.charAt(i);
 
             if (simbolo == MasterMind.TOT_CORRECTE) {
-                posicionesConocidas[i] = letra; // Fijar posición correcta
-                if (!letrasSeguras.contains(letra)) letrasSeguras.add(letra);
+                posicionsConegudes[i] = letra; // Fijar posición correcta
+                if (!lletresSegures.contains(letra)) lletresSegures.add(letra);
             } else if (simbolo == MasterMind.MALA_POSICIO) {
-                if (!letrasSeguras.contains(letra)) letrasSeguras.add(letra);
+                if (!lletresSegures.contains(letra)) lletresSegures.add(letra);
             } else if (simbolo == MasterMind.INCORRECTE) {
-                letrasDescartadas.add(letra);
+                lletresDescartades.add(letra);
             }
         }
-
-        letrasDisponibles.removeAll(letrasDescartadas); // Limpiar letras descartadas
+        lletresDisponibles.removeAll(lletresDescartades); // Limpiar letras descartadas
     }
+
+    public void recibirFeedbackChild(String feedback) {
+        if (ultimIntent == null || feedback == null) return;
+    
+        for (int i = 0; i < feedback.length(); i++) {
+            char letra = ultimIntent.charAt(i);
+            char simbolo = feedback.charAt(i);
+    
+            if (simbolo == MasterMind.TOT_CORRECTE) {
+                posicionsConegudesChild[i] = letra; // Fijar posición correcta
+                if (!lletresSegures.contains(letra)) lletresSegures.add(letra);
+            } else if (simbolo == MasterMind.MALA_POSICIO) {
+                if (!lletresSegures.contains(letra)) lletresSegures.add(letra);
+            } else if (simbolo == MasterMind.INCORRECTE) {
+                lletresDescartades.add(letra);
+            }
+        }
+        lletresDisponibles.removeAll(lletresDescartades);
+    }
+    
 
     public void IaPensant(){
         try {
             // Pausa de 2 segundos (2000 milisegundos)
+            System.out.println("Pensant...");
             Thread.sleep(1500);
         } catch (InterruptedException e) {
             // Manejo de la excepción (opcional pero recomendado)
