@@ -2,8 +2,6 @@ public abstract class Player {
 
     String nom;
     String cognom;
-    int edat;
-    int nivell;
 
     public abstract String makeGuess();
 
@@ -26,21 +24,5 @@ public abstract class Player {
     public void setCognom(String cognom) {
         this.cognom = cognom;
     }
-
-    public int getEdat() {
-        return edat;
-    }
-
-    public void setEdat(int edat) {
-        this.edat = edat;
-    }
-
-    public int getNivell() {
-        return nivell;
-    }
-
-    public void setNivell(int nivell) {
-        this.nivell = nivell;
-    }
-
+    
 }

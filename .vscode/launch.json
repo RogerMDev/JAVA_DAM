@@ -6,6 +6,27 @@
     "configurations": [
         {
             "type": "java",
+            "name": "MasterMind",
+            "request": "launch",
+            "mainClass": "MasterMind",
+            "projectName": "JAVA_PROJECTS_a4fcb0ce"
+        },
+        {
+            "type": "java",
+            "name": "MainFormas",
+            "request": "launch",
+            "mainClass": "AEA3.FORMAS.MainFormas",
+            "projectName": "test3_38c5e7b8"
+        },
+        {
+            "type": "java",
+            "name": "MasterMind",
+            "request": "launch",
+            "mainClass": "MasterMind",
+            "projectName": "test3_38c5e7b8"
+        },
+        {
+            "type": "java",
             "name": "MainAlquiler",
             "request": "launch",
             "mainClass": "AEA3.Alquileres_MATEO.MainAlquiler",
