@@ -1,7 +1,7 @@
 import java.util.Scanner;
 
 public class MasterMind {
-    //Constants
+    //Constants HOLLAAAAAA
     public final static char TOT_CORRECTE = '0';
     public final static char MALA_POSICIO = 'X';
     public final static char INCORRECTE = '-';
@@ -75,16 +75,5 @@ public class MasterMind {
     public static void setAdult_words(String[] adult_words) {
         MasterMind.adult_words = adult_words;
     }
-
-/*    public void IaPensant(){
-        try {
-            // Pausa de 2 segundos (2000 milisegundos)
-            Thread.sleep(2000);
-        } catch (InterruptedException e) {
-            // Manejo de la excepción (opcional pero recomendado)
-            Thread.currentThread().interrupt(); // Restablece el estado de interrupción
-            System.err.println("El sleep fue interrumpido: " + e.getMessage());
-        }
-    } */
 }
 
