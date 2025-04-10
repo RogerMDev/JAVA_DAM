@@ -7,9 +7,9 @@ public class IAPlayer extends Player {
     private char[] posicionsConegudes;
     private char[] posicionsConegudesChild;
     private String ultimIntent;
-    private int longitudParaulaLlarga;
-    private int longitudParaulaCurta;
-    private Random random;
+    private final int longitudParaulaLlarga;
+    private final int longitudParaulaCurta;
+    private final Random random;
 
     public IAPlayer() {
         this.random = new Random();
