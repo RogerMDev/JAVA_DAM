@@ -1,0 +1,3 @@
+Ejemplo de contador de palabras.
+Hola como estas.
+HOLA prueba.
