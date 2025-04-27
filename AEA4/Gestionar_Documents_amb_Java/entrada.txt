@@ -1,3 +1,2 @@
-Ejemplo de contador de palabras.
-Hola como estas.
-HOLA prueba.
+U dos tres quatre cinc sis set.
+Vuit nou deu onze dotze tretze catorze quinze setze disset.

@@ -1,25 +1,44 @@
 package Gestionar_Documents_amb_Java;
 
 import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.FileWriter;
 import java.util.Scanner;
+
 
 public class ContadorDeParaules {
 
     public static void main(String args[]){
         int contadorparaules = 0;
         try {
-            File f = new File("C:\\Users\\ztoxi\\Desktop\\DAM 1\\JAVA_DAM\\AEA 4\\Gestionar_Documents_amb_Java\\entrada.txt");
+            File f = new File("C:\\repos\\JAVA_DAM\\AEA4\\Gestionar_Documents_amb_Java\\entrada.txt");
             Scanner sc = new Scanner(f);
             while (sc.hasNext()){
-                String paraulaActual = sc.next();
-                if (paraulaActual.equals(" ")){
-                    contadorparaules++;
-                }
+                sc.next();
+                contadorparaules++;
             }
-            System.out.println("Hi ha "+ contadorparaules + " paraules.");
+
+            sc.close();
+
+            File sortida = new File("C:\\repos\\JAVA_DAM\\AEA4\\Gestionar_Documents_amb_Java\\sortida.txt");
+
+            if (sortida.exists()) {
+                System.out.println("Atenció: El fitxer sortida.txt ja existeix. Es sobreescriurà.");
+            }
+
+            FileWriter fw = new FileWriter(sortida, false); // Marquem path amb 'sortida' i amb false = sobreescriure (true afegiría un nou arxiu)
+            fw.write("Hi ha " + contadorparaules + " paraules.");
+            fw.close();
+
+            System.out.println("Resultat escrit correctament a sortida.txt.");
             
-        } catch(Exception a){
-            System.out.println("Error : "+ a);
+        }catch (FileNotFoundException fnf){
+            System.out.println("No s'ha pogut trobar l'arxiu '.txt' d'entrada, error: " + fnf+ ".");
+        } catch (SecurityException e) {
+            System.out.println("No tens permisos per llegir el fitxer, error: " + e.getMessage() + "." );
         }
+        catch(Exception a){
+            System.out.println("Error : "+ a + ".");
+        } 
     }
 }
