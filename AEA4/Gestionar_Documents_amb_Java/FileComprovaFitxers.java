@@ -1,4 +1,5 @@
 package Gestionar_Documents_amb_Java;
+
 import java.io.File;
 public class FileComprovaFitxers {
     public static void main(String[] args){

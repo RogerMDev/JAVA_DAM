@@ -1,4 +1,4 @@
-package Gestionar_Documents_amb_Java;
+package ComptadorParaules;
 
 import java.io.File;
 import java.io.FileNotFoundException;
@@ -6,7 +6,7 @@ import java.io.FileWriter;
 import java.util.Scanner;
 
 
-public class ContadorDeParaules {
+public class ComptadorDeParaules {
 
     public static void main(String args[]){
         int contadorparaules = 0;
@@ -38,7 +38,7 @@ public class ContadorDeParaules {
             System.out.println("No tens permisos per llegir el fitxer, error: " + e.getMessage() + "." );
         }
         catch(Exception a){
-            System.out.println("Error : "+ a + ".");
+            System.out.println("Error desconegut: "+ a + ".");
         } 
     }
 }
