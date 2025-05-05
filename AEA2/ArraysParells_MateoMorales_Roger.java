@@ -17,6 +17,7 @@ public class ArraysParells_MateoMorales_Roger{
         
     } catch (ArrayIndexOutOfBoundsException indexOut) {
         System.out.println("Hi ha hagut un error: " + indexOut);
+        
     } catch(Exception e){
         System.out.println("Error " + e);
     }
