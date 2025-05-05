@@ -9,9 +9,9 @@ public class InvertirParaules {
     public static void main(String [] args ){
 
         try {
-            File arxiu = new File("InvertirParaules\\arxiu.txt");
+            File arxiu = new File("arxiu.txt");
             Scanner sc = new Scanner(arxiu);
-            File sortida = new File("InvertirParaules\\arxiu_invertit.txt");
+            File sortida = new File("arxiu_invertit.txt");
             FileWriter fw = new FileWriter(sortida, false);
             
             while (sc.hasNextLine()) {
