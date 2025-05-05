@@ -11,7 +11,7 @@ public class ComptadorDeParaules {
     public static void main(String args[]){
         int contadorparaules = 0;
         try {
-            File f = new File("C:\\repos\\JAVA_DAM\\AEA4\\Gestionar_Documents_amb_Java\\entrada.txt");
+            File f = new File("C:\\repos\\JAVA_DAM\\AEA4\\Gestionar_Documents_amb_Java\\ComptadorParaules\\entrada.txt");
             Scanner sc = new Scanner(f);
             while (sc.hasNext()){
                 sc.next();
@@ -20,7 +20,7 @@ public class ComptadorDeParaules {
 
             sc.close();
 
-            File sortida = new File("C:\\repos\\JAVA_DAM\\AEA4\\Gestionar_Documents_amb_Java\\sortida.txt");
+            File sortida = new File("C:\\repos\\JAVA_DAM\\AEA4\\Gestionar_Documents_amb_Java\\ComptadorParaules\\sortida.txt");
 
             if (sortida.exists()) {
                 System.out.println("Atenció: El fitxer sortida.txt ja existeix. Es sobreescriurà.");
