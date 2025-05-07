@@ -181,24 +181,37 @@ public class RegistreTemperatures_PART6 {
   }
 
   public void calculaMitjana() {
-    float acumulador = 0;
+    try {
+      float acumulador = 0;
     for(int i = 0; i < numTemperatures; i++) {
       acumulador = acumulador + temperatures[i];
     }
     System.out.print((acumulador / numTemperatures));
+        
+    } catch(ArrayIndexOutOfBoundsException a) {
+      System.out.println("Error al interar. Error "+ a);
+    } catch(Exception e){
+      System.out.println("Error " + e);
+    }
   }
 
   public void calculaDiferencia() {
-    float maxima = temperatures[0];
-    float minima = temperatures[0];
-    for(int i = 1; i < numTemperatures; i++) {
-      if (temperatures[i] < minima) {
-        minima = temperatures[i];
+    try {
+      float maxima = temperatures[0];
+      float minima = temperatures[0];
+      for(int i = 1; i < numTemperatures; i++) {
+        if (temperatures[i] < minima) {
+          minima = temperatures[i];
+        }
+        if (temperatures[i] > maxima) {
+          maxima = temperatures[i];
+        }
       }
-      if (temperatures[i] > maxima) {
-        maxima = temperatures[i];
-      }
+      System.out.print((maxima - minima));
+    } catch (ArrayIndexOutOfBoundsException a) {
+      System.out.println("Error al iterar. Error: " +a);
+    } catch (Exception e){
+      System.out.println("Hi ha hagut un error: " + e);
     }
-    System.out.print((maxima - minima));
   }
 }
