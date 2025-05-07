@@ -1,4 +1,4 @@
-package AEA3;
+package RegistreTemperatures;
 import java.util.Scanner;
 
 public class RegistreTemperatures_PART6 {
@@ -183,13 +183,13 @@ public class RegistreTemperatures_PART6 {
   public void calculaMitjana() {
     try {
       float acumulador = 0;
-    for(int i = 0; i < numTemperatures; i++) {
+    for(int i = 0; i <= numTemperatures+1000000; i++) {
       acumulador = acumulador + temperatures[i];
     }
     System.out.print((acumulador / numTemperatures));
         
     } catch(ArrayIndexOutOfBoundsException a) {
-      System.out.println("Error al interar. Error "+ a);
+      System.out.println("Error al interar en el bucle. Error "+ a);
     } catch(Exception e){
       System.out.println("Error " + e);
     }
@@ -199,7 +199,7 @@ public class RegistreTemperatures_PART6 {
     try {
       float maxima = temperatures[0];
       float minima = temperatures[0];
-      for(int i = 1; i < numTemperatures; i++) {
+      for(int i = 1; i <= numTemperatures+1000000; i++) {
         if (temperatures[i] < minima) {
           minima = temperatures[i];
         }
@@ -209,7 +209,7 @@ public class RegistreTemperatures_PART6 {
       }
       System.out.print((maxima - minima));
     } catch (ArrayIndexOutOfBoundsException a) {
-      System.out.println("Error al iterar. Error: " +a);
+      System.out.println("Error al iterar el bucle. Error: " +a);
     } catch (Exception e){
       System.out.println("Hi ha hagut un error: " + e);
     }
