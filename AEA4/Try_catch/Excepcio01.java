@@ -15,5 +15,6 @@ public class Excepcio01 {
             System.out.println("Hi ha hagut un error durant l'execució: " + e );
         }
         System.out.println("El programa s'ha acabat.");
+        
     }
 }
