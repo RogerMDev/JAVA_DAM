@@ -1,3 +1,4 @@
+package Kata2;
 public class Estadisticas {
 
     public static String analizarNumeros(int[] numeros){
