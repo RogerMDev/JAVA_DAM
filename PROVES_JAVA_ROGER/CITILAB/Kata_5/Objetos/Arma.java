@@ -22,4 +22,8 @@ public class Arma implements Usable {
     public String getNombre(){
         return nombre;
     }
+
+    public int getDano() {
+        return dano;
+    }
 }

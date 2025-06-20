@@ -23,4 +23,7 @@ public class Pocion implements Usable {
         return nombre;
     }
 
+    public int getCantidadCurada() {
+        return cantidadCurada;
+    }
 }
