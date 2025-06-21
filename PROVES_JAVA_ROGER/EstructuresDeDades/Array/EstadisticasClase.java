@@ -1,4 +1,4 @@
-package Array;
+package array;
 
 public class EstadisticasClase {
 
@@ -18,7 +18,7 @@ public class EstadisticasClase {
             }
         } 
         avg = sumaTotal/notas.length;
-        return "La nota més gran és: " + max + "\n La nota més petita és: " + min + "\nLa nota mitjana és: " + avg + " .";
-
+        return "La nota més gran és: " + max + "\nLa nota més petita és: " + min + "\nLa nota mitjana és: " + avg;
+    
     }
 }
