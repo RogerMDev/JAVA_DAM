@@ -38,6 +38,22 @@ public class Banco {
         }
     }
 
+    public Cuenta buscarCuentaPorId(int idCuenta) throws Exception {
+    // Recorremos todas las listas de cuentas de todos los clientes
+    for (ArrayList<Cuenta> listaCuentas : mapaCuentas.values()) {
+        // Recorremos cada cuenta dentro de la lista
+        for (Cuenta cuenta : listaCuentas) {
+            // Comparamos el identificador
+            if (cuenta.getIdentificadorCuenta() == idCuenta) {
+                return cuenta;
+            }
+        }
+    }
+
+    // Si llegamos aquí, es que no se encontró la cuenta
+    throw new Exception("No se encontró ninguna cuenta con ID: " + idCuenta);
+}
+
     //FALTAN DOS FUNCIONES 
 
 }
