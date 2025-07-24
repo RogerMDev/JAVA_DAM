@@ -35,6 +35,13 @@ public class Usuario {
         }
     }
 
+    @Override
+    public String toString() {
+        return "👤 Usuario: " + nombre +
+            " | ID: " + id +
+            " | Libros prestados actualmente: " + listaLibrosPrestados.size();
+    }
+
     public String getNombre() {
         return nombre;
     }
@@ -51,5 +58,18 @@ public class Usuario {
         this.id = id;
     }
 
+    /*@Override
+    public boolean equals(Object obj){
+        if (this == obj) return true;
+        if (obj == null || getClass() != obj.getClass()) return false;
+        
+        Usuario otro = (Usuario) obj;
+        return this.id == otro.id;
+    }
+
+    @Override
+    public int hashCode() {
+        return Integer.hashCode(id);
+    }*/
 
 }
