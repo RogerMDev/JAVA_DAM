@@ -62,12 +62,14 @@ public class Libro {
         this.numeroEjemplares = numeroEjemplares;
     }
 
-    public String ToString(){
-        return "📘 Título: " + titulo +
-                "| Autor: " + autor +
-                "| ISBN: " + ISBN +
-                "| Ejemplares disponibles: " + numeroEjemplares;
+    @Override
+    public String toString() { 
+        return "📚 Libro: " + titulo +
+            " | Autor: " + autor +
+            " | ISBN: " + ISBN +
+            " | Ejemplares disponibles: " + numeroEjemplares;
     }
+
 
     @Override
     public boolean equals(Object obj) {
