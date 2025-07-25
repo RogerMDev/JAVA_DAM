@@ -99,8 +99,100 @@ public class Biblioteca {
         }
     }
 
-    public void registrarPrestamo(Usuario usuario, Libro libro){
+    public void registrarPrestamo(Usuario usuarioPrestamista, Libro libroPrestado) {
+    Usuario usuarioEncontrado = null;
+    Libro libroEncontrado = null;
+
+    // Buscar usuario por ID
+    for (Usuario u : listaDeUsuarios) {
+        if (u.getId() == usuarioPrestamista.getId()) {
+            usuarioEncontrado = u;
+            break;
+        }
+    }
+
+    if (usuarioEncontrado == null) {
+        System.out.println("❌ Usuario no encontrado.");
+        return;
+    }
+
+    // Buscar libro por ISBN
+    for (Libro l : listaDeLibros) {
+        if (l.getISBN().equalsIgnoreCase(libroPrestado.getISBN())) {
+            libroEncontrado = l;
+            break;
+        }
+    }
+
+    if (libroEncontrado == null) {
+        System.out.println("❌ Libro no encontrado en el registro.");
+        return;
+    }
+
+    if (!libroEncontrado.consultardisponibilidad()) {
+        System.out.println("❌ El libro no está disponible actualmente.");
+        return;
+    }
+
+    // Si todo está ok → registrar préstamo
+    Prestamo prestamo = new Prestamo(usuarioEncontrado, libroEncontrado);
+    listaDePrestamosActivos.add(prestamo);
+    usuarioEncontrado.prestarLibro(libroEncontrado);
+    libroEncontrado.marcarPrestado();
+
+    System.out.println("✅ Préstamo registrado correctamente.");
+    }
+
+    public void registrarDevolucion(Usuario usuarioADevolver, Libro LibroADevolver){
+        Usuario usuarioEncontrado = null;
+        Libro libroEncontrado = null;
+        Prestamo prestamoEncontrado = null;
+    
+        for (Usuario usuario : listaDeUsuarios){
+            if (usuario.getId() == usuarioADevolver.getId()){
+                usuarioEncontrado = usuario;
+                break;
+            }
+        }
+
+        if (usuarioEncontrado == null){
+            System.out.println("No se ha encontrado el usuario.");
+            return;
+        }
+
+        for (Libro libro : listaDeLibros){
+            if (libro.getISBN().equalsIgnoreCase(LibroADevolver.getISBN())){
+                libroEncontrado = libro;
+                break;
+            }
+        }
+
+        if (libroEncontrado == null){
+            System.out.println("No se ha encontrado el libro a devolver.");
+            return;
+        }
+
+        for (Prestamo p : listaDePrestamosActivos){
+            if (p.getUsuario().getId() == usuarioEncontrado.getId() && p.getLibro().getISBN().equalsIgnoreCase(libroEncontrado.getISBN())){
+                prestamoEncontrado = p;
+                break;
+            }
+        }
+
+        if (prestamoEncontrado != null){
+            listaDePrestamosActivos.remove(prestamoEncontrado);
+            usuarioEncontrado.devolverLibro(libroEncontrado);
+            libroEncontrado.marcarDevuelto();
+            System.out.println("✅ Devolucion registrada con exito! ");
+        } else{
+            System.out.println("❌ No se ha encontrado el prestamo activo para easte libro y usuario.");
+        }
+    }
+
+    public void verPrestamosActivosDeUsuario(){
         
     }
+      
+
 }
  

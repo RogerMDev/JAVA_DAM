@@ -29,9 +29,13 @@ public class Usuario {
     }
 
     public void verLibrosPrestadosActualmente(){
-        System.out.println("Libros prestados actualmente por " + nombre + " :");
-        for (Libro libro : listaLibrosPrestados){
+        if (!listaLibrosPrestados.isEmpty()){
+            System.out.println("Libros prestados actualmente por " + nombre + " :");
+            for (Libro libro : listaLibrosPrestados){
             System.out.println("-  " + libro.getTitulo() + " ," + libro.getAutor());
+            }
+        } else {
+            System.out.println("El usuario no tiene libros en prestamo actualmente");
         }
     }
 
