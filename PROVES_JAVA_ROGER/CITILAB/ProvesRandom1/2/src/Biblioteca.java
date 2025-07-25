@@ -189,10 +189,16 @@ public class Biblioteca {
         }
     }
 
-    public void verPrestamosActivosDeUsuario(){
-        
+    public void renovarPrestamo(Prestamo prestamoARenovar,int diasExtra){
+        for (Prestamo prestamoActivo : listaDePrestamosActivos){
+            if (prestamoActivo.getUsuario().getId() == prestamoARenovar.getUsuario().getId() 
+            && prestamoActivo.getLibro().getISBN().equalsIgnoreCase(prestamoARenovar.getLibro().getISBN())){
+                prestamoActivo.renovar(diasExtra);
+                System.out.println("Se ha renovado el prestamo en la cantidad de " + diasExtra + " días." );
+                return;
+            }
+        }
+        System.out.println("No se ha encontrado el prestamo a renovar en la lista de prestamos activos");
     }
-      
-
 }
  
