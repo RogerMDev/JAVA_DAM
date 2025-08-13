@@ -1,4 +1,4 @@
-public abstract class Notificacion {
+public abstract class Notificacion implements Enviable,Cancelable {
     private int id;
     private String destinatario;
     private String mensaje;
@@ -25,8 +25,18 @@ public abstract class Notificacion {
         this.prioridad = prioridad;
         this.estado = estado;
     }
-
+    @Override
     public abstract void enviar();
+
+    @Override
+    public boolean cancelar() {
+        if (getEstado() == Estado.ENVIADA || getEstado() == Estado.CANCELADA) {
+            return false;
+        }
+        setEstado(Estado.CANCELADA);
+        return true;
+    }
+
 
     public int getId() {
         return id;
