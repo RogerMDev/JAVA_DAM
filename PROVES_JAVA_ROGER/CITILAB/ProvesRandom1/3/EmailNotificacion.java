@@ -6,11 +6,13 @@ public EmailNotificacion(int id, String destinatario, String mensaje, int priori
 
 
 @Override
-public void enviar(){
-    System.out.println("Se ha enviado una notificación sobre un Email a " + getDestinatario() + 
-    " con el siguiente mensaje: " + getMensaje() + 
-    " ID: " + getId() +
+    public void enviar(){
+    System.out.print("Se ha enviado una notificación sobre un Email a " + getDestinatario() + 
+    " con el siguiente mensaje: " + getMensaje());
+    System.out.println();
+    System.out.println("ID: " + getId() +
     " Prioridad: " + getPrioridad() +
     " Estado: " + getEstado());
+    System.out.println("-------------");
     }
 }
