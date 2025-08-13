@@ -1,6 +1,6 @@
 public class PushNotificacion extends Notificacion {
 
-    public PushNotificacion(int id, String destinatario, String mensaje, int prioridad, String estado){
+    public PushNotificacion(int id, String destinatario, String mensaje, Prioridad prioridad, Estado estado){
         super(id, destinatario, mensaje, prioridad, estado);
     }
 

@@ -1,6 +1,6 @@
 public class EmailNotificacion extends Notificacion{
 
-public EmailNotificacion(int id, String destinatario, String mensaje, int prioridad, String estado){
+public EmailNotificacion(int id, String destinatario, String mensaje, Prioridad prioridad, Estado estado){
     super(id, destinatario, mensaje, prioridad, estado);
 }
 

@@ -2,10 +2,23 @@ public abstract class Notificacion {
     private int id;
     private String destinatario;
     private String mensaje;
-    private int prioridad;
-    private String estado;
+    private Prioridad prioridad;
+    private Estado estado;
 
-    public Notificacion(int id, String destinatario, String mensaje, int prioridad, String estado){
+    public enum Prioridad {
+        BAJA,
+        MEDIA,
+        ALTA
+    }
+
+    public enum Estado {
+        PENDIENTE,
+        ENVIADA,
+        CANCELADA,
+        FALLIDA
+    }
+
+    public Notificacion(int id, String destinatario, String mensaje, Prioridad prioridad, Estado estado) {
         this.id = id;
         this.destinatario = destinatario;
         this.mensaje = mensaje;
@@ -15,11 +28,11 @@ public abstract class Notificacion {
 
     public abstract void enviar();
 
-    public int getId(){
+    public int getId() {
         return id;
     }
 
-    public String getDestinatario(){
+    public String getDestinatario() {
         return destinatario;
     }
 
@@ -27,11 +40,11 @@ public abstract class Notificacion {
         return mensaje;
     }
 
-    public int getPrioridad() {
+    public Prioridad getPrioridad() {
         return prioridad;
     }
 
-    public String getEstado() {
+    public Estado getEstado() {
         return estado;
     }
 
@@ -47,12 +60,11 @@ public abstract class Notificacion {
         this.mensaje = mensaje;
     }
 
-    public void setPrioridad(int prioridad) {
+    public void setPrioridad(Prioridad prioridad) {
         this.prioridad = prioridad;
     }
 
-    public void setEstado(String estado) {
+    public void setEstado(Estado estado) {
         this.estado = estado;
     }
-
 }

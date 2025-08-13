@@ -1,6 +1,6 @@
 public class SMSNotificacion extends Notificacion {
     
-    public SMSNotificacion(int id, String destinatario, String mensaje, int prioridad, String estado){
+    public SMSNotificacion(int id, String destinatario, String mensaje, Prioridad prioridad, Estado estado){
         super(id, destinatario, mensaje, prioridad, estado);
     }
 
