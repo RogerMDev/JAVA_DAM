@@ -13,6 +13,8 @@ public abstract class Notificacion {
         this.estado = estado;
     }
 
+    public abstract void enviar();
+
     public int getId(){
         return id;
     }
@@ -53,5 +55,4 @@ public abstract class Notificacion {
         this.estado = estado;
     }
 
-    public abstract void enviar();
 }

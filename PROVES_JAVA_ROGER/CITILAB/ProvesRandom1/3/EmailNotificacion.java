@@ -5,7 +5,6 @@ public EmailNotificacion(int id, String destinatario, String mensaje, int priori
 }
 
 
-
 @Override
 public void enviar(){
     System.out.println("Se ha enviado una notificación sobre un Email a " + getDestinatario() + 
