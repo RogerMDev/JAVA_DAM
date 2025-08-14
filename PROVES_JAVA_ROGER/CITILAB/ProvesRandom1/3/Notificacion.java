@@ -37,6 +37,28 @@ public abstract class Notificacion implements Enviable,Cancelable {
         return true;
     }
 
+    public final void procesar(){
+        if (!validar()){
+            System.out.println("Validación fallida por la notificación ID " + getId());
+            return;
+        }
+        preparar();
+        enviar();
+        registrar();
+    }
+
+    protected boolean validar(){
+        return true;
+    }
+
+    protected void preparar(){
+
+    }
+
+    protected void registrar(){
+        setEstado(Estado.ENVIADA);
+        System.out.println("Notificacion ID: " + getId() + " enviada y registrada");
+    }
 
     public int getId() {
         return id;

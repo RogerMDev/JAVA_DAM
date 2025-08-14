@@ -15,4 +15,10 @@ public EmailNotificacion(int id, String destinatario, String mensaje, Prioridad 
     " Estado: " + getEstado());
     System.out.println("-------------");
     }
+
+@Override
+    protected boolean validar(){
+        return getDestinatario().contains("@");
+    }
+ 
 }

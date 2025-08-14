@@ -1,7 +1,7 @@
 public class Notificador {
 
     public void procesar(Notificacion n){
-        n.enviar();
+        n.procesar();
     }
 
 }
