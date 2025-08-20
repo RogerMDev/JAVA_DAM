@@ -6,7 +6,6 @@ public class main {
         int eleccion;
         Scanner sc = new Scanner(System.in);
 
-        Mascota mascota0 = new Mascota();
         //EXECUCIÓ
         while (ejecucion){
             mostrarMenu();
@@ -29,6 +28,14 @@ public class main {
             }
             if (eleccion == 2){
                 Mascota.mostrarListaDeMascotas();
+                continue;
+            }
+            if (eleccion == 3){
+                String nombre;
+                System.out.println("Di el nombre de la mascota que quieres que se presente:");
+                nombre = sc.nextLine();
+                Mascota.mostrarPresentacionPorNombre(nombre);
+                
             }
         }
     }

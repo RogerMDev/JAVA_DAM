@@ -27,6 +27,16 @@ public class Mascota {
         }
     }
 
+    public static void mostrarPresentacionPorNombre(String nombreMascota){
+        for (Mascota masc : listaDeMascotas){
+            if (masc.getNombre().equalsIgnoreCase(nombreMascota)){
+                masc.presentarse();
+                return;
+            }
+        }
+        System.out.println("No se encontró ninguna mascota registrada con ese nombre");
+    }
+
     public String getNombre() {
         return nombre;
     }
@@ -38,6 +48,8 @@ public class Mascota {
     public String getTipoDeAnimal() {
         return tipoDeAnimal;
     }
+
+
 
 
 }
