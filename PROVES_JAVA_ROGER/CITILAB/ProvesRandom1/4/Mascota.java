@@ -54,8 +54,4 @@ public class Mascota {
     public String getTipoDeAnimal() {
         return tipoDeAnimal;
     }
-
-
-
-
 }
