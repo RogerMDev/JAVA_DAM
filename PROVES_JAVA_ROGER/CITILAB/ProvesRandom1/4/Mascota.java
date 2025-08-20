@@ -17,8 +17,14 @@ public class Mascota {
         System.out.println("Hola, me llamo " + nombre + ", tengo " + edad + " años y soy un " + tipoDeAnimal);
     }
 
-    public void anadirMascotaALista(Mascota mascotaAAnadir){
+    public static void anadirMascotaALista(Mascota mascotaAAnadir){
+        for (Mascota masc : listaDeMascotas) {
+            if (masc.getNombre().equalsIgnoreCase(mascotaAAnadir.getNombre())) {
+                System.out.println("⚠️ Ya existe una mascota con ese nombre!");
+                return;
+            }
         listaDeMascotas.add(mascotaAAnadir);
+        }
     }
 
     public static void mostrarListaDeMascotas(){
