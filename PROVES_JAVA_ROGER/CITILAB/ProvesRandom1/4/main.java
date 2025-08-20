@@ -2,13 +2,35 @@ import java.util.Scanner;
 
 public class main {
     public static void main(String[] args) {
-
+        boolean ejecucion = true;
+        int eleccion;
         Scanner sc = new Scanner(System.in);
 
+        Mascota mascota0 = new Mascota();
         //EXECUCIÓ
-        mostrarMenu();
+        while (ejecucion){
+            mostrarMenu();
+            eleccion = sc.nextInt();
+            if (eleccion == 1){
+                String nombre;
+                int edad;
+                String tipoDeMascota;
 
+                System.out.println("Di el nombre de la nueva mascota a añadir:");
+                nombre = sc.nextLine();
+                System.out.println("Di la edad de la mascota a añadir:");
+                edad = sc.nextInt();
+                System.out.println("Di el tipo de mascota que es (perro,gato, etc..)");
+                tipoDeMascota = sc.nextLine();
 
+                Mascota mascota1 = new Mascota(nombre, edad, tipoDeMascota);
+                mascota1.anadirMascotaALista(mascota1);
+                continue;
+            }
+            if (eleccion == 2){
+                Mascota.mostrarListaDeMascotas();
+            }
+        }
     }
 
     public static void mostrarMenu(){

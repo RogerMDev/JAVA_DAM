@@ -2,10 +2,10 @@
 import java.util.ArrayList;
 
 public class Mascota {
-    String nombre;
-    double edad;
-    String tipoDeAnimal;
-    ArrayList listaDeMascotas = new ArrayList<Mascota>();
+    private String nombre;
+    private double edad;
+    private String tipoDeAnimal;
+    private static ArrayList<Mascota> listaDeMascotas = new ArrayList<>();
 
     public Mascota(String nombre, double edad, String tipoDeAnimal){
         this.nombre = nombre;
@@ -20,4 +20,24 @@ public class Mascota {
     public void anadirMascotaALista(Mascota mascotaAAnadir){
         listaDeMascotas.add(mascotaAAnadir);
     }
+
+    public static void mostrarListaDeMascotas(){
+        for (Mascota masc : listaDeMascotas){
+            System.out.println(masc.getNombre() + " : " + masc.getEdad() + " años ( " + masc.getTipoDeAnimal() + " )");
+        }
+    }
+
+    public String getNombre() {
+        return nombre;
+    }
+
+    public double getEdad() {
+        return edad;
+    }
+
+    public String getTipoDeAnimal() {
+        return tipoDeAnimal;
+    }
+
+
 }
