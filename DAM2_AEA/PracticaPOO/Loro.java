@@ -1,5 +1,5 @@
 package PracticaPOO;
 
-public class Animal {
+public class Loro {
     
 }
