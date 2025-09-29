@@ -1,5 +1,10 @@
 package PracticaPOO;
 
-public class Aguila {
+public class Aguila extends Ave {
+
+    @Override
+    public String getSo() {
+        return "Kiiii-kiiii";
+    }
     
 }
