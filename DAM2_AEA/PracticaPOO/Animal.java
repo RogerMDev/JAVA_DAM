@@ -1,4 +1,5 @@
-package PracticaPOO;
+package practicapoo;
+
 public abstract class Animal {
     private int codigoIdentificativo;
     private String nombre;

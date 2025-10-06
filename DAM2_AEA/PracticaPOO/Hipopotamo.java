@@ -1,4 +1,4 @@
-package PracticaPOO;
+package practicapoo;
 
 public class Hipopotamo {
     
