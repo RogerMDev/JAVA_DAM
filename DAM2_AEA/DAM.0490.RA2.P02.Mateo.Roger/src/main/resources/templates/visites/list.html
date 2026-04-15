@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="ca" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Llistat de Visites</title>
+    <link rel="stylesheet" th:href="@{/css/app.css}">
+</head>
+<body>
+<main class="container">
+    <h1>Visites Mèdiques</h1>
+
+    <div class="actions">
+        <a class="btn" th:href="@{/visites/nova}">Nova visita</a>
+        <a class="btn btn-secondary" th:href="@{/h2-console}" target="_blank" rel="noreferrer">H2 Console</a>
+    </div>
+
+    <p class="ok-msg" th:if="${missatge}" th:text="${missatge}"></p>
+
+    <table>
+        <thead>
+        <tr>
+            <th>Id</th>
+            <th>Nom Pacient</th>
+            <th>Nom Metge</th>
+            <th>Data</th>
+            <th>Diagnòstic</th>
+            <th>Accions</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:if="${#lists.isEmpty(visites)}">
+            <td colspan="6">No hi ha visites registrades.</td>
+        </tr>
+        <tr th:each="visita : ${visites}">
+            <td th:text="${visita.idVisita}"></td>
+            <td th:text="${visita.nomPacient}"></td>
+            <td th:text="${visita.nomMetge}"></td>
+            <td th:text="${visita.data}"></td>
+            <td th:text="${visita.diagnostic}"></td>
+            <td class="row-actions">
+                <a class="btn btn-secondary" th:href="@{/visites/{id}/editar(id=${visita.idVisita})}">Editar</a>
+                <form th:action="@{/visites/{id}/eliminar(id=${visita.idVisita})}" method="post">
+                    <button class="btn btn-danger" type="submit">Eliminar</button>
+                </form>
+            </td>
+        </tr>
+        </tbody>
+    </table>
+</main>
+</body>
+</html>

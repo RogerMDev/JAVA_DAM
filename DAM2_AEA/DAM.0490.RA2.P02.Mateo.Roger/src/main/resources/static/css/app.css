@@ -1,0 +1,93 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    background: #f3f6fa;
+    color: #1f2937;
+}
+
+.container {
+    max-width: 980px;
+    margin: 2rem auto;
+    padding: 1.5rem;
+    background: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 8px 28px rgba(15, 23, 42, 0.08);
+}
+
+h1 {
+    margin-top: 0;
+}
+
+.actions {
+    margin: 1rem 0;
+    display: flex;
+    gap: 0.6rem;
+    flex-wrap: wrap;
+}
+
+.btn {
+    border: none;
+    border-radius: 8px;
+    padding: 0.55rem 0.9rem;
+    text-decoration: none;
+    display: inline-block;
+    color: #fff;
+    background: #0b6ef6;
+    cursor: pointer;
+}
+
+.btn-secondary {
+    background: #4b5563;
+}
+
+.btn-danger {
+    background: #dc2626;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+th,
+td {
+    border-bottom: 1px solid #e5e7eb;
+    padding: 0.7rem 0.5rem;
+    text-align: left;
+    vertical-align: top;
+}
+
+.row-actions {
+    display: flex;
+    gap: 0.4rem;
+    flex-wrap: wrap;
+}
+
+label {
+    margin-top: 0.8rem;
+    font-weight: 600;
+    display: block;
+}
+
+input,
+textarea {
+    width: 100%;
+    margin-top: 0.3rem;
+    padding: 0.55rem;
+    border: 1px solid #cbd5e1;
+    border-radius: 8px;
+}
+
+.error-msg {
+    color: #b91c1c;
+    margin: 0.3rem 0 0;
+}
+
+.ok-msg {
+    color: #047857;
+    font-weight: 600;
+}

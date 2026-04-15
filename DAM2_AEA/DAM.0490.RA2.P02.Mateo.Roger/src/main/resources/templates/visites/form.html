@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="ca" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title th:text="${formulariTitol}">Formulari visita</title>
+    <link rel="stylesheet" th:href="@{/css/app.css}">
+</head>
+<body>
+<main class="container">
+    <h1 th:text="${formulariTitol}"></h1>
+
+    <form th:object="${visita}"
+          th:action="${visita.idVisita} == null ? @{/visites} : @{/visites/{id}(id=${visita.idVisita})}"
+          method="post">
+        <label for="nomPacient">Nom pacient</label>
+        <input id="nomPacient" type="text" th:field="*{nomPacient}" maxlength="40" required>
+        <p class="error-msg" th:if="${#fields.hasErrors('nomPacient')}" th:errors="*{nomPacient}"></p>
+
+        <label for="nomMetge">Nom metge</label>
+        <input id="nomMetge" type="text" th:field="*{nomMetge}" maxlength="40" required>
+        <p class="error-msg" th:if="${#fields.hasErrors('nomMetge')}" th:errors="*{nomMetge}"></p>
+
+        <label for="data">Data</label>
+        <input id="data" type="date" th:field="*{data}" required>
+        <p class="error-msg" th:if="${#fields.hasErrors('data')}" th:errors="*{data}"></p>
+
+        <label for="diagnostic">Diagnòstic</label>
+        <textarea id="diagnostic" th:field="*{diagnostic}" maxlength="250" rows="4" required></textarea>
+        <p class="error-msg" th:if="${#fields.hasErrors('diagnostic')}" th:errors="*{diagnostic}"></p>
+
+        <div class="actions">
+            <button class="btn" type="submit">Desar</button>
+            <a class="btn btn-secondary" th:href="@{/visites}">Cancelar</a>
+        </div>
+    </form>
+</main>
+</body>
+</html>

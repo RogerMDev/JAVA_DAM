@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="ca" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Error 404</title>
+    <link rel="stylesheet" th:href="@{/css/app.css}">
+</head>
+<body>
+<main class="container">
+    <h1>No s'ha trobat el recurs</h1>
+    <p th:text="${errorMissatge}">El recurs no existeix.</p>
+    <a class="btn" th:href="@{/visites}">Tornar al llistat</a>
+</main>
+</body>
+</html>
